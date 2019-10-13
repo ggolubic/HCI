@@ -1,2 +1,2 @@
-# HCL
+# HCI
 Uni project
