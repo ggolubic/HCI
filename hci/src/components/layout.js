@@ -5,9 +5,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 import theme from "../styles/theme"
 
-import Header from "./header"
 import "./layout.css"
 import Navigation from "./common/Navigation/Navigation"
+import Content from "./common/Content/Content"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,14 +26,14 @@ const Layout = ({ children }) => {
         {({ location }) => (
           <>
             <Navigation location={location} />
-            <Header siteTitle={data.site.siteMetadata.title} />
-
-            <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
+            <Content>
+              <main>{children}</main>
+              <footer>
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>
+              </footer>
+            </Content>
           </>
         )}
       </Location>

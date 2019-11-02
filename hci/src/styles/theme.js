@@ -8,6 +8,8 @@ const theme = {
   },
   font: {
     family: "Roboto",
+    primaryFont: "Montserrat",
+    secondaryFont: "Lora",
   },
 }
 

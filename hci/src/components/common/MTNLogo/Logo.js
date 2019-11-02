@@ -4,20 +4,16 @@ import { LargeLogo, SmallLogo, LogoContainer, LogoText } from "./Logo.styled"
 
 const MTNLogo = ({ open }) => {
   console.log(open)
-  if (open) {
-    return (
-      <LogoContainer>
-        <LargeLogo src={Logo} />
-        <LogoText>MTN</LogoText>
-      </LogoContainer>
-    )
-  } else {
-    return (
-      <LogoContainer>
-        <SmallLogo src={Logo} />
-      </LogoContainer>
-    )
-  }
+  return open ? (
+    <LogoContainer>
+      <LargeLogo src={Logo} />
+      <LogoText>MTN</LogoText>
+    </LogoContainer>
+  ) : (
+    <LogoContainer>
+      <SmallLogo src={Logo} />
+    </LogoContainer>
+  )
 }
 
 export default MTNLogo

@@ -59,4 +59,4 @@ const Navigation = ({ location }) => {
   )
 }
 
-export default Navigation
+export default React.memo(Navigation)

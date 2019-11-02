@@ -20,5 +20,6 @@ export const LogoText = styled.span`
   font-size: 26px;
   font-weight: 600;
   margin-top: 30px;
+  font: ${({ theme }) => theme.font.primaryFont};
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
 `
