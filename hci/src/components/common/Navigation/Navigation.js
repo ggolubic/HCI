@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useEffect, useCallback, useMemo } from "react"
 
 import ChevronLeftIcon from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
 import ChevronRightIcon from "@kiwicom/orbit-components/lib/icons/ChevronRight"
@@ -13,21 +13,38 @@ import {
 
 import NavigationItem from "./NavigationItem"
 import MTNLogo from "../MTNLogo/Logo"
+import useWindowSize from "../../../hooks/useWindowSize"
 
 const Navigation = ({ location }) => {
   const resizeWidth = 1280
 
   const windowSize = window.innerWidth
 
-  const largeScreen = useCallback(() => {
+  const largeScreen = useMemo(() => {
     return windowSize >= resizeWidth
   }, [windowSize])
 
   const [navigationOpen, setNavigationOpen] = useState(largeScreen)
 
-  const onControlClick = () => {
-    return navigationOpen ? setNavigationOpen(false) : setNavigationOpen(true)
-  }
+  useEffect(() => {
+    if (windowSize < resizeWidth) {
+      setNavigationOpen(false)
+    } else if (windowSize >= resizeWidth) {
+      setNavigationOpen(true)
+    }
+  }, [windowSize])
+
+  const expandNavigation = useCallback(() => {
+    setNavigationOpen(true)
+  }, [])
+
+  const collapseNavigation = useCallback(() => {
+    setNavigationOpen(false)
+  }, [])
+  const onControlClick = useMemo(() => {
+    return navigationOpen ? collapseNavigation : expandNavigation
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigationOpen])
 
   return (
     <NavigationContainer open={navigationOpen}>

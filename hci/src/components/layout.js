@@ -4,10 +4,12 @@ import { ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 import theme from "../styles/theme"
+import GlobalStyle from "../styles/globalstyles"
 
 import "./layout.css"
 import Navigation from "./common/Navigation/Navigation"
 import Content from "./common/Content/Content"
+import Flex from "./common/Flex/Flex"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,9 +24,10 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Location>
         {({ location }) => (
-          <>
+          <Flex style={{ height: "100vh" }}>
             <Navigation location={location} />
             <Content>
               <main>{children}</main>
@@ -34,7 +37,7 @@ const Layout = ({ children }) => {
                 <a href="https://www.gatsbyjs.org">Gatsby</a>
               </footer>
             </Content>
-          </>
+          </Flex>
         )}
       </Location>
     </ThemeProvider>
