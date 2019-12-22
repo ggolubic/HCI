@@ -7,16 +7,21 @@ export const ItemLink = styled(Link)`
   display: flex;
 `
 
-export const ItemName = styled.div`
+export const ItemName = styled.span`
   padding-left: 10px;
-  a {
-    text-decoration: none;
-  }
+  width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+
   ${({ open }) =>
     !open &&
     css`
       opacity: 0;
     `}
+`
+export const ItemDescription = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+  display: flex;
+  transition: all 150ms ease-in-out;
 `
 
 export const ItemContainer = styled.div`
@@ -31,6 +36,9 @@ export const ItemContainer = styled.div`
   transition: all 150ms ease-in-out;
   color: transparent;
   overflow: hidden;
+  &:hover {
+    background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
+  }
 
   ${({ selected }) =>
     selected &&
@@ -58,9 +66,10 @@ export const NavigationControlText = styled.span`
 `
 
 export const NavigationContainer = styled.div`
-  position: fixed;
+  position: sticky;
   top: 0;
   bottom: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: ${({ theme }) => theme.sizes.navigationWidth}px;
@@ -68,13 +77,13 @@ export const NavigationContainer = styled.div`
   z-index: 5;
   transition: width 150ms ease-in-out;
   font-size: 12px;
-  overflow: hidden;
   border-right: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   ${({ open }) =>
     open &&
     css`
       width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+      overflow: hidden;
 
       ${ItemContainer} {
         color: ${({ theme }) => theme.orbit.colorTextPrimary};
