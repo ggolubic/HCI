@@ -22,6 +22,12 @@ export const ItemName = styled.span`
       opacity: 0;
     `}
 `
+export const ItemDescription = styled.div`
+  color: ${({ theme }) => theme.orbit.paletteInkNormal};
+  width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+  display: flex;
+  transition: all 150ms ease-in-out;
+`
 
 export const ItemContainer = styled.div`
   display: flex;
@@ -35,6 +41,9 @@ export const ItemContainer = styled.div`
   transition: all 150ms ease-in-out;
   color: transparent;
   overflow: hidden;
+  &:hover {
+    background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
@@ -64,6 +73,7 @@ export const NavigationContainer = styled.div`
   position: sticky;
   top: 0;
   bottom: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: ${({ theme }) => theme.sizes.navigationWidth}px;
@@ -78,7 +88,7 @@ export const NavigationContainer = styled.div`
     css`
       width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
       overflow: hidden;
-      ${ItemContainer} {
+      <<<<<<< head =======>>>>>>>wierderror ${ItemContainer} {
         color: ${({ theme }) => theme.orbit.colorTextPrimary};
       }
     `}

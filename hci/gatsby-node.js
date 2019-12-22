@@ -1,17 +1,18 @@
-const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
+const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  const newsList = path.resolve(`./src/templates/NewsListTemplate.js`)
-  console.log(newsList)
+  const blogList = path.resolve(
+    `./src/templates/NewsListTemplate/NewsListTemplate.js`
+  )
+  const blogPost = path.resolve(`./src/templates/NewsPostTemplate.js`)
   // blog post
   const {
     data: {
       allMdx: { posts },
     },
   } = await graphql(`
-    query NewsPages {
+    query BlogPages {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: {
@@ -21,28 +22,25 @@ exports.createPages = async ({ actions, graphql }) => {
       ) {
         posts: edges {
           post: node {
-            excerpt(pruneLength: 250)
             frontmatter {
+              slug
               title
-              date
             }
           }
         }
       }
     }
   `)
-  console.log(posts)
+
+  // Create blog post list pages
   const postsPerPage = 3
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? `/news` : `/news/${index + 1}`,
-      component: newsList,
+      component: blogList,
       context: {
-        // additional data can be passed via context;
-        // this will be used in the GraphQL query as
-        // an query variable
         limit: postsPerPage,
         skip: index * postsPerPage,
         numPages,
@@ -50,22 +48,21 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
-}
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
 
-// You can delete this file if you're not using it
+  // Create blog post pages
+  posts.forEach(({ post }, index) => {
+    const { slug } = post.frontmatter
+    const previous = index === 0 ? null : posts[index - 1].post
+    const next = index === posts.length - 1 ? null : posts[index + 1].post
+
+    createPage({
+      path: `/news/${slug}`,
+      component: blogPost,
+      context: {
+        slug,
+        previous,
+        next,
+      },
+    })
+  })
+}

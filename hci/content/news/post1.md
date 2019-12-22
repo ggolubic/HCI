@@ -1,6 +1,7 @@
 ---
 title: Hello World - from mdx!
 date: 2019-06-01
+slug: hello-world
 published: true
 ---
 

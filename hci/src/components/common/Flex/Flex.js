@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Flex = ({ direction, children }) => {
-  return <Flexbox>{children}</Flexbox>
+  return <Flexbox direction={direction}>{children}</Flexbox>
 }
 
 const Flexbox = styled.div`

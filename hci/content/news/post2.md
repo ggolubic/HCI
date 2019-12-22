@@ -1,5 +1,6 @@
 ---
 title: Second Post!
+slug: second-post
 date: 2019-06-10
 published: true
 ---
