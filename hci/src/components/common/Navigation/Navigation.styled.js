@@ -22,12 +22,6 @@ export const ItemName = styled.span`
       opacity: 0;
     `}
 `
-export const ItemDescription = styled.div`
-  color: ${({ theme }) => theme.orbit.paletteInkNormal};
-  width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
-  display: flex;
-  transition: all 150ms ease-in-out;
-`
 
 export const ItemContainer = styled.div`
   display: flex;

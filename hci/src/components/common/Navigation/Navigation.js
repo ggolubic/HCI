@@ -13,7 +13,6 @@ import {
 
 import NavigationItem from "./NavigationItem"
 import MTNLogo from "../MTNLogo/Logo"
-import useWindowSize from "../../../hooks/useWindowSize"
 
 const Navigation = ({ location }) => {
   const resizeWidth = 1280
