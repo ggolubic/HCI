@@ -22,15 +22,18 @@ export const PostTitle = styled.h2`
   margin-bottom: 0px;
 `
 
-export const PostTimeStamp = styled.span`
+export const PostTimeStamp = styled.h3`
   display: inline-block;
   color: hsl(0, 0%, 45%);
   font-size: 15px;
-  margin-bottom: 15px;
-  :after {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    display: block; /* This will put the pseudo element on its own line. */
-    width: 80%; /* Change this to whatever width you want. */
-    border-bottom: 2px solid black; /* This creates the border. Replace black with whatever color you want. */
-  }
+  margin: 0 0 15px 10px;
+`
+export const PostAuthor = styled.h3`
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0;
+`
+export const PostDescription = styled.div`
+  display: flex;
+  margin-top: 10px;
 `

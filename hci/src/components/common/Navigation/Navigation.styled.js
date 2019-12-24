@@ -39,9 +39,6 @@ export const ItemContainer = styled.div`
     background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
   }
 
-  &:hover {
-    background-color: ${({ theme }) => theme.orbit.paletteCloudLight};
-  }
   ${({ selected }) =>
     selected &&
     css`
@@ -64,7 +61,7 @@ export const NavigationControlText = styled.span`
 `
 
 export const NavigationContainer = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100vh;
@@ -77,13 +74,21 @@ export const NavigationContainer = styled.div`
   font-size: 12px;
   border-right: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
+
+  & + div {
+    transition: all 150ms ease-in-out;
+  }
+
   ${({ open }) =>
     open &&
     css`
       width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
       overflow: hidden;
-      <<<<<<< head =======>>>>>>>wierderror ${ItemContainer} {
-        color: ${({ theme }) => theme.orbit.colorTextPrimary};
+
+      @media all and (min-width: 1280px) {
+        & + div {
+          margin-left: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+        }
       }
     `}
 `

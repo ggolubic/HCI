@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `MTN`,
@@ -21,14 +23,25 @@ module.exports = {
         path: `${__dirname}/content/news`,
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/news`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+        components: path.join(__dirname, "src/components"),
+        common: path.join(__dirname, "src/components/common"),
+        templates: path.join(__dirname, "src/templates"),
+        consts: path.join(__dirname, "src/consts"),
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

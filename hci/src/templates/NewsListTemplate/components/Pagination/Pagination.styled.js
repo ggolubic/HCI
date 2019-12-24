@@ -33,8 +33,14 @@ export const NumContainer = styled.div`
 
 export const PageChange = styled.span`
   padding: 5px;
+  font-size: calc(1.2vw + 10px);
+  @media screen and (max-width: 465px) {
+    span {
+      display: none;
+    }
+    font-size: 20px;
+  }
 `
 export const PaginationContainer = styled.div`
-  max-width: 50%;
-  margin: 0 auto;
+  margin: 30px auto;
 `

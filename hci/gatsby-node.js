@@ -3,9 +3,11 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const blogList = path.resolve(
-    `./src/templates/NewsListTemplate/NewsListTemplate.js`
+    `src/templates/NewsListTemplate/NewsListTemplate.js`
   )
-  const blogPost = path.resolve(`./src/templates/NewsPostTemplate.js`)
+  const blogPost = path.resolve(
+    `src/templates/NewsPostTemplate/NewsPostTemplate.js`
+  )
   // blog post
   const {
     data: {

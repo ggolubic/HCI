@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout.js"
+import Layout from "components/layout.js"
 import ShortPost from "./components/ShortPost/ShortPost.js"
 import Pagination from "./components/Pagination/Pagination.js"
 
@@ -9,8 +9,15 @@ const NewsList = ({ data, pageContext }) => {
     <Layout>
       <h1>Headlines</h1>
       {data.allMdx.nodes.map(
-        ({ excerpt, frontmatter: { slug, title, date } }) => (
-          <ShortPost title={title} slug={slug} date={date} excerpt={excerpt} />
+        ({ excerpt, frontmatter: { slug, title, date, author } }) => (
+          <ShortPost
+            title={title}
+            slug={slug}
+            date={date}
+            excerpt={excerpt}
+            author={author}
+            key={slug}
+          />
         )
       )}
       <Pagination pageContext={pageContext} />
@@ -31,8 +38,9 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date
+          date(formatString: "MMMM DD, YYYY")
           slug
+          author
         }
       }
     }

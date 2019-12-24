@@ -12,7 +12,7 @@ const NavigationItem = ({ item, pathname, open }) => {
 
   return (
     <ItemLink to={getLink()}>
-      <ItemContainer selected={pathname === getLink()}>
+      <ItemContainer selected={pathname.includes(getLink())}>
         <ItemDescription>
           <item.Icon size="23px" />
           <ItemName open={open}>{item.name}</ItemName>
