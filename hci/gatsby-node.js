@@ -1,7 +1,13 @@
 const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+  createRedirect({
+    fromPath: "/news",
+    toPath: "/",
+    isPermanent: true,
+    redirectInBrowser: true,
+  })
   const blogList = path.resolve(
     `src/templates/NewsListTemplate/NewsListTemplate.js`
   )
@@ -40,13 +46,14 @@ exports.createPages = async ({ actions, graphql }) => {
 
   Array.from({ length: numPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/news` : `/news/${index + 1}`,
+      path: index === 0 ? `/` : `/news/${index + 1}`,
       component: blogList,
       context: {
         limit: postsPerPage,
         skip: index * postsPerPage,
         numPages,
         currentPage: index + 1,
+        pagePath: "news",
       },
     })
   })

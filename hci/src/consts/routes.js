@@ -14,6 +14,7 @@ const TV_SHOWS = {
 const NEWS = {
   name: "News",
   path: "/news",
+  default: true,
   Icon: FaNewspaper,
 }
 const EDITORS_CHOICE = {
