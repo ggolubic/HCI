@@ -40,7 +40,7 @@ const Pagination = ({ pageContext }) => {
 
         <ItemLink to={`news/${nextPage}`} disabled={isLast}>
           <PageChange>
-            <span>Previous Page</span> →
+            <span>Next Page</span> →
           </PageChange>
         </ItemLink>
       </Flex>
