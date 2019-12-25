@@ -1,12 +1,11 @@
 import React from "react"
 
-import {
-  ItemLink,
-  NumContainer,
-  PageChange,
-  PaginationContainer,
-} from "./Pagination.styled"
-import Flex from "components/common/Flex/Flex"
+import ChevronLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
+import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight"
+import ButtonLink from "@kiwicom/orbit-components/lib/ButtonLink"
+import Stack from "@kiwicom/orbit-components/lib/Stack"
+
+import { ItemLink, PaginationContainer } from "./Pagination.styled"
 
 const Pagination = ({ pageContext }) => {
   const { currentPage, numPages, pagePath } = pageContext
@@ -18,32 +17,40 @@ const Pagination = ({ pageContext }) => {
 
   return (
     <PaginationContainer>
-      <Flex direction="row" justify="center">
-        <ItemLink to={`/${pagePath}${prevPage}`} disabled={isFirst}>
-          <PageChange>
-            ← <span>Previous Page</span>
-          </PageChange>
-        </ItemLink>
+      <Stack direction="row" spacing="natural" align="center" justify="center">
+        {!isFirst && (
+          <ItemLink to={`/${pagePath}${prevPage}`}>
+            <ButtonLink
+              onClick={() => {}}
+              iconLeft={<ChevronLeft />}
+              type="secondary"
+            />
+          </ItemLink>
+        )}
 
         {Array.from({ length: numPages }, (_, i) => {
           const isCurrent = currentPage === i + 1
-          return (
+          return isCurrent ? (
+            <ButtonLink disabled={true} type="secondary">
+              {i + 1}
+            </ButtonLink>
+          ) : (
             <ItemLink
               key={`pagination-number${i + 1}`}
               to={`/${pagePath}${i === 0 ? "" : `/${i + 1}`}`}
               disabled={isCurrent}
             >
-              <NumContainer>{i + 1}</NumContainer>
+              <ButtonLink type="secondary">{i + 1}</ButtonLink>
             </ItemLink>
           )
         })}
 
-        <ItemLink to={`/${pagePath}/${nextPage}`} disabled={isLast}>
-          <PageChange>
-            <span>Next Page</span> →
-          </PageChange>
-        </ItemLink>
-      </Flex>
+        {!isLast && (
+          <ItemLink to={`/${pagePath}/${nextPage}`}>
+            <ButtonLink iconLeft={<ChevronRight />} type="secondary" />
+          </ItemLink>
+        )}
+      </Stack>
     </PaginationContainer>
   )
 }
