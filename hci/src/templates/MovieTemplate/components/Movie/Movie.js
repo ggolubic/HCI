@@ -77,7 +77,10 @@ const Movie = ({
               </CrewMember>
             )}
           </FeaturedCrew>
-          <FindOutMore href={`https://www.imdb.com/title/${imdb_id}`}>
+          <FindOutMore
+            href={`https://www.imdb.com/title/${imdb_id}`}
+            target="_blank"
+          >
             Find out more
           </FindOutMore>
         </MovieDescription>
