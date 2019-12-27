@@ -1,4 +1,8 @@
 const path = require(`path`)
+const dotenv = require("dotenv")
+const axios = require("axios")
+
+dotenv.config({ path: `.env.development` })
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
@@ -61,17 +65,47 @@ exports.createPages = async ({ actions, graphql }) => {
   // Create blog post pages
   posts.forEach(({ post }, index) => {
     const { slug } = post.frontmatter
-    const previous = index === 0 ? null : posts[index - 1].post
-    const next = index === posts.length - 1 ? null : posts[index + 1].post
 
     createPage({
       path: `/news/${slug}`,
       component: blogPost,
       context: {
         slug,
-        previous,
-        next,
       },
     })
+  })
+
+  //Fetch movie list
+  const {
+    data: { results: movieList },
+  } = await axios.get(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.GATSBY_TMDB_API_KEY}&language=en-US&page=1`
+  )
+
+  //Fetch movie data
+  const aggregatedMovieList = []
+  movieList.forEach(async movie => {
+    const movieDetails = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.GATSBY_TMDB_API_KEY}&append_to_response=credits
+        `
+    )
+
+    aggregatedMovieList.push(movieDetails.data)
+
+    createPage({
+      path: `/movies/${movieDetails.data.id}`,
+      component: path.resolve("src/templates/MovieTemplate/index.js"),
+      context: {
+        movie: movieDetails.data,
+      },
+    })
+  })
+
+  createPage({
+    path: `/movies`,
+    component: path.resolve("src/templates/MovieListTemplate/index.js"),
+    context: {
+      movies: aggregatedMovieList,
+    },
   })
 }
