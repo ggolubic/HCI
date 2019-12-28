@@ -37,7 +37,7 @@ const Movie = ({
   )
 
   useEffect(() => {
-    if (window !== "undefined") {
+    if (typeof window !== "undefined") {
       if (window.innerWidth < 800) {
         setDirection("column")
         setSrc(`https://image.tmdb.org/t/p/w780${backdrop_path}`)

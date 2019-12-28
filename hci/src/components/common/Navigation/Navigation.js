@@ -16,7 +16,9 @@ import MTNLogo from "../MTNLogo/Logo"
 
 const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
-  const [windowSize, setWindowSize] = useState(window.innerWidth || 1280)
+  const [windowSize, setWindowSize] = useState(
+    (typeof window !== "undefined" && window.innerWidth) || 1280
+  )
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowSize(window.innerWidth)
@@ -44,9 +46,9 @@ const Navigation = ({ location, logo }) => {
   const collapseNavigation = useCallback(() => {
     setNavigationOpen(false)
   }, [])
+
   const onControlClick = useMemo(() => {
     return navigationOpen ? collapseNavigation : expandNavigation
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigationOpen])
 
   return (
