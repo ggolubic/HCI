@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql }) => {
     isPermanent: true,
     redirectInBrowser: true,
   })
+
   const blogList = path.resolve(
     `src/templates/NewsListTemplate/NewsListTemplate.js`
   )
@@ -105,7 +106,44 @@ exports.createPages = async ({ actions, graphql }) => {
     path: `/movies`,
     component: path.resolve("src/templates/MovieListTemplate/index.js"),
     context: {
-      movies: aggregatedMovieList,
+      list: aggregatedMovieList,
+      title: "Movies",
+      heading: "Top 20 Popular Movies",
+      cardPath: "movies",
     },
+  })
+
+  //Fetch TV shows list
+  const {
+    data: { results: tvShowsList },
+  } = await axios.get(
+    `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.GATSBY_TMDB_API_KEY}&language=en-US&page=1`
+  )
+
+  createPage({
+    path: `/tv_shows`,
+    component: path.resolve("src/templates/MovieListTemplate/index.js"),
+    context: {
+      list: tvShowsList,
+      title: "TV Shows",
+      heading: "Top 20 Popular TV Shows",
+      cardPath: "tv_shows",
+    },
+  })
+
+  //Fetch Tv show details
+  tvShowsList.forEach(async show => {
+    const showDetails = await axios.get(
+      `https://api.themoviedb.org/3/tv/${show.id}?api_key=${process.env.GATSBY_TMDB_API_KEY}&language=en-US&append_to_response=credits,external_ids
+        `
+    )
+
+    createPage({
+      path: `/tv_shows/${showDetails.data.id}`,
+      component: path.resolve("src/templates/TvShowTemplate/index.js"),
+      context: {
+        show: showDetails.data,
+      },
+    })
   })
 }
