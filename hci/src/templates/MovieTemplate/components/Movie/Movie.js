@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { format } from "date-fns"
 import RatingStars from "@kiwicom/orbit-components/lib/RatingStars"
 import ArrowLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
@@ -31,25 +31,33 @@ const Movie = ({
     credits: { crew },
   },
 }) => {
+  const [direction, setDirection] = useState("row")
+  const [src, setSrc] = useState(
+    `https://image.tmdb.org/t/p/w300${poster_path}`
+  )
+
+  useEffect(() => {
+    if (window !== "undefined") {
+      if (window.innerWidth < 800) {
+        setDirection("column")
+        setSrc(`https://image.tmdb.org/t/p/w780${backdrop_path}`)
+      }
+    }
+  }, [])
+
   const featuredWriter = crew.find(person => person.job === "Writer")
   const featuredProducer = crew.find(
     person => person.job === "Executive Producer"
   )
+
   return (
     <>
       <BackLink to="/movies">
         <ArrowLeft /> Back to Movies
       </BackLink>
       <Container>
-        <Flex direction={window.innerWidth < 800 ? "column" : "row"}>
-          <img
-            src={
-              window.innerWidth < 800
-                ? `https://image.tmdb.org/t/p/w780${backdrop_path}`
-                : `https://image.tmdb.org/t/p/w300${poster_path}`
-            }
-            alt="Banner"
-          />
+        <Flex direction={direction}>
+          <img src={src} alt="Banner" />
           <MovieDescription>
             <TitleAndYear>
               {title}

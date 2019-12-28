@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import Img from "gatsby-image"
 
-export const LargeLogo = styled.img`
+export const LargeLogo = styled(Img)`
   width: 90px;
   margin: 30px 15px 0 10px;
 `
-export const SmallLogo = styled.img`
+export const SmallLogo = styled(Img)`
   width: 50px;
   margin: 30px 15px 0 10px;
 `

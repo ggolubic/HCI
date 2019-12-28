@@ -5,8 +5,6 @@ import Layout from "components/layout.js"
 import Post from "./components/Post"
 
 const NewsPostTemplate = ({ data: { post } }) => {
-  console.log(post)
-
   return (
     <Layout>
       <Post post={post} />

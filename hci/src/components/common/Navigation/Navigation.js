@@ -4,7 +4,7 @@ import ChevronLeftIcon from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
 import ChevronRightIcon from "@kiwicom/orbit-components/lib/icons/ChevronRight"
 import ButtonLink from "@kiwicom/orbit-components/lib/ButtonLink"
 
-import { mainNavigationItems } from "../../../consts/routes"
+import { mainNavigationItems } from "consts/routes"
 import {
   NavigationContainer,
   NavigationControlContainer,
@@ -14,10 +14,14 @@ import {
 import NavigationItem from "./NavigationItem"
 import MTNLogo from "../MTNLogo/Logo"
 
-const Navigation = ({ location }) => {
+const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
-
-  const windowSize = window.innerWidth
+  const [windowSize, setWindowSize] = useState(window.innerWidth || 1280)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowSize(window.innerWidth)
+    }
+  }, [])
 
   const largeScreen = useMemo(() => {
     return windowSize >= resizeWidth
@@ -47,7 +51,7 @@ const Navigation = ({ location }) => {
 
   return (
     <NavigationContainer open={navigationOpen}>
-      <MTNLogo open={navigationOpen} />
+      <MTNLogo open={navigationOpen} src={logo} />
       {mainNavigationItems.map((item, id) => (
         <NavigationItem
           key={id}

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "styled-components"
-// import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 import theme from "../styles/theme"
 import GlobalStyle from "../styles/globalstyles"
@@ -12,15 +12,17 @@ import Content from "./common/Content/Content"
 import Flex from "./common/Flex/Flex"
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query {
+      logoImage: file(relativePath: { eq: "logo.png" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 90, maxHeight: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <ThemeProvider theme={theme}>
@@ -28,7 +30,7 @@ const Layout = ({ children }) => {
       <Location>
         {({ location }) => (
           <Flex style={{ height: "100vh" }}>
-            <Navigation location={location} />
+            <Navigation location={location} logo={data.logoImage.sharp.fluid} />
             <Content>
               <main>{children}</main>
             </Content>

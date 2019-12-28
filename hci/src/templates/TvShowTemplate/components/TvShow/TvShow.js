@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { format } from "date-fns"
 import RatingStars from "@kiwicom/orbit-components/lib/RatingStars"
 import ArrowLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
@@ -32,6 +32,19 @@ const TvShow = ({
     external_ids: { imdb_id },
   },
 }) => {
+  const [direction, setDirection] = useState("row")
+  const [src, setSrc] = useState(
+    `https://image.tmdb.org/t/p/w300${poster_path}`
+  )
+
+  useEffect(() => {
+    if (window !== "undefined") {
+      if (window.innerWidth < 800) {
+        setDirection("column")
+        setSrc(`https://image.tmdb.org/t/p/w780${backdrop_path}`)
+      }
+    }
+  }, [])
   const featuredCast = cast.slice(0, 5)
 
   return (
@@ -40,15 +53,8 @@ const TvShow = ({
         <ArrowLeft /> Back to TV Shows
       </BackLink>
       <Container>
-        <Flex direction={window.innerWidth < 800 ? "column" : "row"}>
-          <img
-            src={
-              window.innerWidth < 800
-                ? `https://image.tmdb.org/t/p/w780${backdrop_path}`
-                : `https://image.tmdb.org/t/p/w300${poster_path}`
-            }
-            alt="Banner"
-          />
+        <Flex direction={direction}>
+          <img src={src} alt="Banner" />
           <MovieDescription>
             <TitleAndYear>
               {name}
