@@ -64,7 +64,7 @@ export const Overview = styled.p`
   margin: 20px auto;
   height: 150px;
   color: #4d4d4d;
-  @media screen and (max-width: 385px) {
+  @media screen and (max-width: 411px) {
     margin-top: 8px;
     font-size: 0.7em;
     line-height: 1.2;

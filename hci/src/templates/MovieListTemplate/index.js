@@ -5,14 +5,15 @@ import SEO from "components/seo.js"
 import Layout from "components/layout.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
 
-import MovieListing from "./components/MovieListing"
+import Card from "common/Card/Card"
 
-const MovieListTemplate = ({ pageContext }) => {
-  console.log(pageContext)
+const MovieListTemplate = ({
+  pageContext: { heading, title, list, cardPath },
+}) => {
   return (
     <Layout>
-      <SEO title="Movies" />
-      <SiteTitle>Top 20 Popular Movies</SiteTitle>
+      <SEO title={title} />
+      <SiteTitle>{heading}</SiteTitle>
       <Grid
         rowGap="40px"
         maxWidth="100%"
@@ -21,15 +22,16 @@ const MovieListTemplate = ({ pageContext }) => {
           columnGap: "2%",
         }}
       >
-        {pageContext.movies.map((movie, index) => {
+        {list.map((movie, index) => {
           return (
-            <MovieListing
+            <Card
               key={index}
               id={movie.id}
-              title={movie.title}
+              path={cardPath}
+              title={movie.title || movie.name}
               poster={movie.poster_path}
               overview={movie.overview}
-              date={movie.release_date}
+              date={movie.release_date || movie.first_air_date}
             />
           )
         })}

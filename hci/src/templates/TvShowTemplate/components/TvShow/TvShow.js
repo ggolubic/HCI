@@ -11,34 +11,33 @@ import {
   Overview,
   Tags,
   Tag,
-  FeaturedCrew,
-  CrewMember,
-  CrewMemberName,
+  FeaturedCast,
+  CastMember,
+  CastMemberName,
   FindOutMore,
+  Border,
   BackLink,
-} from "./Movie.styled"
+} from "./TvShow.styled"
 
-const Movie = ({
-  movie: {
-    title,
+const TvShow = ({
+  show: {
+    name,
     poster_path,
     vote_average,
     overview,
-    release_date,
+    first_air_date,
     genres,
     backdrop_path,
-    imdb_id,
-    credits: { crew },
+    credits: { cast },
+    external_ids: { imdb_id },
   },
 }) => {
-  const featuredWriter = crew.find(person => person.job === "Writer")
-  const featuredProducer = crew.find(
-    person => person.job === "Executive Producer"
-  )
+  const featuredCast = cast.slice(0, 5)
+
   return (
     <>
-      <BackLink to="/movies">
-        <ArrowLeft /> Back to Movies
+      <BackLink to="/tv_shows">
+        <ArrowLeft /> Back to TV Shows
       </BackLink>
       <Container>
         <Flex direction={window.innerWidth < 800 ? "column" : "row"}>
@@ -52,8 +51,8 @@ const Movie = ({
           />
           <MovieDescription>
             <TitleAndYear>
-              {title}
-              <span>{`(${format(new Date(release_date), "yyyy")})`}</span>
+              {name}
+              <span>{`(${format(new Date(first_air_date), "yyyy")})`}</span>
             </TitleAndYear>
             <RatingStars
               rating={vote_average / 2}
@@ -70,21 +69,6 @@ const Movie = ({
               <h4>Overview</h4>
               <p>{overview}</p>
             </Overview>
-            <h4>Featured Crew</h4>
-            <FeaturedCrew>
-              {featuredProducer && (
-                <CrewMember>
-                  <CrewMemberName>{featuredProducer.name}</CrewMemberName>
-                  <span>{featuredProducer.job}</span>
-                </CrewMember>
-              )}
-              {featuredWriter && (
-                <CrewMember>
-                  <CrewMemberName>{featuredWriter.name}</CrewMemberName>
-                  <span>{featuredWriter.job}</span>
-                </CrewMember>
-              )}
-            </FeaturedCrew>
             <FindOutMore
               href={`https://www.imdb.com/title/${imdb_id}`}
               target="_blank"
@@ -93,9 +77,19 @@ const Movie = ({
             </FindOutMore>
           </MovieDescription>
         </Flex>
+        <Border />
+        <h4>Featured Cast</h4>
+        <FeaturedCast>
+          {featuredCast.map(person => (
+            <CastMember>
+              <CastMemberName>{person.name}</CastMemberName>
+              <span>{person.character}</span>
+            </CastMember>
+          ))}
+        </FeaturedCast>
       </Container>
     </>
   )
 }
 
-export default Movie
+export default TvShow

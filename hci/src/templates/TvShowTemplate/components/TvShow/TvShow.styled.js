@@ -42,6 +42,9 @@ export const Overview = styled.div`
   h4 {
     margin-bottom: 10px;
   }
+  p {
+    margin-bottom: 0;
+  }
 `
 export const Tags = styled.div`
   margin-top: 8px;
@@ -55,11 +58,11 @@ export const Tag = styled.span`
   }
 `
 
-export const FeaturedCrew = styled.div`
+export const FeaturedCast = styled.div`
   display: flex;
   margin-top: 20px;
 `
-export const CrewMember = styled.div`
+export const CastMember = styled.div`
   margin-right: 20px;
   span {
     font-family: Roboto;
@@ -68,11 +71,21 @@ export const CrewMember = styled.div`
     font-weight: 400;
   }
 `
-export const CrewMemberName = styled.h3`
+export const CastMemberName = styled.h3`
   margin-bottom: 5px;
   font-size: 20px;
   @media screen and (max-width: 375px) {
     font-size: 16px;
+  }
+`
+
+export const Border = styled.div`
+  ::after {
+    display: block;
+    content: "";
+    height: 1px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
   }
 `
 
@@ -81,12 +94,14 @@ export const FindOutMore = styled.a`
   text-decoration: none;
   color: black;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 20px;
   font-weight: 600;
   :hover {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     transition: 0.2s all;
   }
+
   @media screen and (max-width: 375px) {
     font-size: 16px;
   }

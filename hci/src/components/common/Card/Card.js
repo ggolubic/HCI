@@ -10,22 +10,22 @@ import {
   Overview,
   ReleaseDate,
   MovieLink,
-} from "./MovieListing.styled"
+} from "./Card.styled"
 
-const MovieListing = ({ title, poster, overview, date, id }) => {
+const Card = ({ title, poster, overview, date, path, id }) => {
   const formattedDate = format(new Date(date), "MMMM dd yyyy")
 
   const shortOverview = useMemo(() => {
-    if (window.innerWidth > 768) {
-      return `${overview.slice(0, 150)}...`
-    } else {
+    if (window.innerWidth === 768 || window.innerWidth === 320) {
       return `${overview.slice(0, 90)}...`
+    } else {
+      return `${overview.slice(0, 150)}...`
     }
   }, [window.innerWidth])
 
   return (
     <Container>
-      <MovieLink to={`/movies/${id}`}>
+      <MovieLink to={`/${path}/${id}`}>
         <Stack direction="row" flex="true">
           <Image src={`https://image.tmdb.org/t/p/w342${poster}`} />
           <Description>
@@ -39,4 +39,4 @@ const MovieListing = ({ title, poster, overview, date, id }) => {
   )
 }
 
-export default MovieListing
+export default Card
