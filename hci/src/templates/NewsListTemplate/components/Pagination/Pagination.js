@@ -24,6 +24,7 @@ const Pagination = ({ pageContext }) => {
               onClick={() => {}}
               iconLeft={<ChevronLeft />}
               type="secondary"
+              title="Previous page"
             />
           </ItemLink>
         )}
@@ -31,7 +32,12 @@ const Pagination = ({ pageContext }) => {
         {Array.from({ length: numPages }, (_, i) => {
           const isCurrent = currentPage === i + 1
           return isCurrent ? (
-            <ButtonLink disabled={true} type="secondary">
+            <ButtonLink
+              disabled={true}
+              type="secondary"
+              title={`page ${i + 1}`}
+              key={`pagination-number${i + 1}`}
+            >
               {i + 1}
             </ButtonLink>
           ) : (
@@ -47,7 +53,11 @@ const Pagination = ({ pageContext }) => {
 
         {!isLast && (
           <ItemLink to={`/${pagePath}/${nextPage}`}>
-            <ButtonLink iconLeft={<ChevronRight />} type="secondary" />
+            <ButtonLink
+              iconLeft={<ChevronRight />}
+              type="secondary"
+              title="Next page"
+            />
           </ItemLink>
         )}
       </Stack>

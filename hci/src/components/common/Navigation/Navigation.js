@@ -17,7 +17,7 @@ import MTNLogo from "../MTNLogo/Logo"
 const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
   const [windowSize, setWindowSize] = useState(
-    (typeof window !== "undefined" && window.innerWidth) || 1280
+    (typeof window !== "undefined" && window.innerWidth) || 1200
   )
   useEffect(() => {
     if (typeof window !== "undefined") {

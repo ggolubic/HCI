@@ -1,5 +1,4 @@
 const path = require("path")
-
 module.exports = {
   siteMetadata: {
     title: `MTN`,
@@ -49,10 +48,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: [`Roboto`, `source sans pro\:300,400`],
-        display: "swap",
+        fonts: [
+          {
+            family: `Source Sans Pro`,
+            variants: [`400`, `600`],
+          },
+        ],
       },
     },
     {
