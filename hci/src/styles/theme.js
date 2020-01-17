@@ -7,7 +7,7 @@ const theme = {
     navigationExpandedWidth: 192,
   },
   font: {
-    family: "Roboto",
+    family: "Source Sans Pro",
     primaryFont: "Montserrat",
     secondaryFont: "Lora",
   },
