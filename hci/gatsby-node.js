@@ -46,7 +46,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `)
 
   // Create blog post list pages
-  const postsPerPage = 3
+  const postsPerPage = 4
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, index) => {
@@ -145,5 +145,17 @@ exports.createPages = async ({ actions, graphql }) => {
         show: showDetails.data,
       },
     })
+  })
+
+  //Editors Blog
+  createPage({
+    path: `/editors_blog`,
+    component: path.resolve("src/templates/EditorsBlogTemplate/index.js"),
+    context: {
+      list: tvShowsList,
+      title: "Editor's Blog",
+      heading: "Editor's Blog",
+      cardPath: "editors_blog",
+    },
   })
 }

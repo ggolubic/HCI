@@ -21,7 +21,7 @@ const NavigationItem = ({ item, pathname, open }) => {
     <ItemLink to={getLink()}>
       <ItemContainer selected={isSelected()}>
         <ItemDescription>
-          <item.Icon size="23px" />
+          <item.Icon size="25px" />
           <ItemName open={open}>{item.name}</ItemName>
         </ItemDescription>
       </ItemContainer>
