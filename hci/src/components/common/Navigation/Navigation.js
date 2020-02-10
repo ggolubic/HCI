@@ -12,6 +12,7 @@ import {
 } from "./Navigation.styled"
 
 import NavigationItem from "./NavigationItem"
+import NavigationFooter from "./NavigationFooter"
 import MTNLogo from "../MTNLogo/Logo"
 
 const Navigation = ({ location, logo }) => {
@@ -77,6 +78,7 @@ const Navigation = ({ location, logo }) => {
           )}
         </ButtonLink>
       </NavigationControlContainer>
+      {navigationOpen && <NavigationFooter />}
     </NavigationContainer>
   )
 }

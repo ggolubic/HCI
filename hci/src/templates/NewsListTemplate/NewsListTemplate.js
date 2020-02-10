@@ -4,13 +4,14 @@ import Layout from "components/layout.js"
 import SEO from "components/seo.js"
 import ShortPost from "./components/ShortPost/ShortPost.js"
 import Pagination from "./components/Pagination/Pagination.js"
+import SiteTitle from "common/SiteTitle/SiteTitle"
 
 const NewsList = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title="News" />
 
-      <h1>Headlines</h1>
+      <SiteTitle>Headlines</SiteTitle>
       {data.allMdx.nodes.map(
         ({ excerpt, frontmatter: { slug, title, date, author } }) => (
           <ShortPost
