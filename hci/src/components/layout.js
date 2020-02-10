@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import { Location } from "@reach/router"
 import theme from "../styles/theme"
-import GlobalStyle from "../styles/globalstyles"
 
 import "./layout.css"
 import Navigation from "./common/Navigation/Navigation"
@@ -26,7 +25,6 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <Location>
         {({ location }) => (
           <Flex style={{ height: "100vh" }}>
