@@ -1,15 +1,11 @@
 import React from "react"
-import { LargeLogo, SmallLogo, LogoContainer, LogoText } from "./Logo.styled"
+import { Logo, LogoContainer, LogoText } from "./Logo.styled"
 
 const MTNLogo = ({ open, src }) => {
-  return open ? (
+  return (
     <LogoContainer>
-      <LargeLogo fluid={src} alt="Logo" />
-      <LogoText>MTN</LogoText>
-    </LogoContainer>
-  ) : (
-    <LogoContainer>
-      <SmallLogo fluid={src} alt="Logo" />
+      <Logo fluid={src} alt="Logo" open={open} />
+      <LogoText open={open}>MTN</LogoText>
     </LogoContainer>
   )
 }

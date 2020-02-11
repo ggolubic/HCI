@@ -17,9 +17,18 @@ import MTNLogo from "../MTNLogo/Logo"
 
 const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
+  const [isClient, setClient] = useState(false)
+
+  useEffect(() => {
+    setClient(true)
+  }, [])
+
+  const key = isClient ? `client` : `server`
+
   const [windowSize, setWindowSize] = useState(
     (typeof window !== "undefined" && window.innerWidth) || 1200
   )
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowSize(window.innerWidth)
@@ -53,7 +62,7 @@ const Navigation = ({ location, logo }) => {
   }, [navigationOpen])
 
   return (
-    <NavigationContainer open={navigationOpen}>
+    <NavigationContainer open={navigationOpen} key={key}>
       <MTNLogo open={navigationOpen} src={logo} />
       {mainNavigationItems.map((item, id) => (
         <NavigationItem
