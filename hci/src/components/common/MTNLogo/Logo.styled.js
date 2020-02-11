@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 
 export const Logo = styled(Img)`
   width: 50px;
-  margin: 30px 15px 0 10px;
+  margin: 30px 15px 0px 15px;
   transition: width 250ms ease-in-out;
 
   ${({ open }) =>

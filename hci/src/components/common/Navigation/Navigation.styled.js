@@ -83,7 +83,6 @@ export const NavigationContainer = styled.div`
     open &&
     css`
       width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
-      transition: width 250ms ease-in-out;
       overflow: hidden;
 
       @media all and (min-width: 1280px) {
