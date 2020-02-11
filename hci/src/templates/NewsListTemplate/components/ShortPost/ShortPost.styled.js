@@ -12,7 +12,7 @@ export const ShortPostContainer = styled.div`
     transition: 0.5s all;
   }
 `
-export const PostTitleLink = styled(Link)`
+export const PostLink = styled(Link)`
   color: black;
   text-decoration: none;
 `
