@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 export const ShortPostContainer = styled.div`
   margin: 20px auto;
   border: 1px solid #dadce0;
-  border-radius: 8px;
   padding: 10px;
   background-color: white;
   box-shadow: 0 2px 1px -1px gray;
@@ -25,13 +24,15 @@ export const PostTitle = styled.h2`
 export const PostTimeStamp = styled.h3`
   display: inline-block;
   color: hsl(0, 0%, 45%);
-  font-size: 15px;
-  margin: 0 0 15px 10px;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 15px 1px;
 `
 export const PostAuthor = styled.h3`
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 0;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
 `
 export const PostDescription = styled.div`
   display: flex;
