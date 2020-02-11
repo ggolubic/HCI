@@ -70,19 +70,20 @@ export const NavigationContainer = styled.div`
   width: ${({ theme }) => theme.sizes.navigationWidth}px;
   background-color: white;
   z-index: 5;
-  transition: width 150ms ease-in-out;
+  transition: width 250ms ease-in-out;
   font-size: 12px;
   border-right: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
 
   & + div {
-    transition: all 150ms ease-in-out;
+    transition: all 250ms ease-in-out;
   }
 
   ${({ open }) =>
     open &&
     css`
       width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
+      transition: width 250ms ease-in-out;
       overflow: hidden;
 
       @media all and (min-width: 1280px) {
