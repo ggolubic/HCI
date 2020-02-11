@@ -1,11 +1,21 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
+export const BackLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+`
 export const PostContainer = styled.div`
   background: #fff;
   padding: 20px;
   border-radius: 10px;
 `
-
 export const PostTitle = styled.h1`
   font-size: calc(1.52vw + 23px);
   margin-bottom: 10px;

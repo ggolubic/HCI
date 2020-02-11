@@ -9,8 +9,8 @@ export const BackLink = styled(Link)`
   font-weight: 400;
   font-size: 22px;
   margin-bottom: 20px;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
 `
-
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
@@ -36,7 +36,6 @@ export const TitleAndYear = styled.span`
 export const MovieDescription = styled.div`
   margin-left: 20px;
 `
-
 export const Overview = styled.div`
   margin-top: 20px;
   h4 {
@@ -50,14 +49,12 @@ export const Tags = styled.div`
   margin-top: 8px;
   display: flex;
 `
-
 export const Tag = styled.span`
   opacity: 0.8;
   :not(:last-of-type) {
     margin-right: 5px;
   }
 `
-
 export const FeaturedCast = styled.div`
   display: flex;
   margin-top: 20px;
@@ -78,7 +75,6 @@ export const CastMemberName = styled.h3`
     font-size: 16px;
   }
 `
-
 export const Border = styled.div`
   ::after {
     display: block;
@@ -88,7 +84,6 @@ export const Border = styled.div`
     margin-bottom: 20px;
   }
 `
-
 export const FindOutMore = styled.a`
   display: inline-block;
   text-decoration: none;
