@@ -26,8 +26,12 @@ export const Title = styled.h3`
 `
 
 export const Container = styled.div`
-  background: #fff;
+  background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.5s all;
+  :hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
 `
 
 export const Description = styled.div`

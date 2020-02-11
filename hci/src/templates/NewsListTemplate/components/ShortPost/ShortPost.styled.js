@@ -3,13 +3,12 @@ import { Link } from "gatsby"
 
 export const ShortPostContainer = styled.div`
   margin: 20px auto;
-  border: 1px solid #dadce0;
   padding: 10px;
   background-color: white;
-  box-shadow: 0 2px 1px -1px gray;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.5s all;
   :hover {
-    box-shadow: 0 5px 3px -3px gray;
-    transition: 0.5s all;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 `
 export const PostLink = styled(Link)`

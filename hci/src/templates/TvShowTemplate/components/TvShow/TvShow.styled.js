@@ -5,16 +5,19 @@ export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
   font-weight: 400;
   font-size: 22px;
   margin-bottom: 20px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  transition: 0.5s all;
+  :hover {
+    color: gray;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 `
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
-  border-radius: 5px;
 `
 export const TitleAndYear = styled.span`
   font-size: 30px;
