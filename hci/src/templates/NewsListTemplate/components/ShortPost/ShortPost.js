@@ -7,6 +7,7 @@ import {
   PostTimeStamp,
   PostAuthor,
   PostDescription,
+  PostExcerpt,
 } from "./ShortPost.styled"
 
 const ShortPost = ({ title, date, slug, excerpt, author }) => {
@@ -18,7 +19,7 @@ const ShortPost = ({ title, date, slug, excerpt, author }) => {
           <PostAuthor>{author}</PostAuthor>
           <PostTimeStamp>{date}</PostTimeStamp>
         </PostDescription>
-        <p>{excerpt}</p>
+        <PostExcerpt>{excerpt}</PostExcerpt>
       </ShortPostContainer>
     </PostLink>
   )

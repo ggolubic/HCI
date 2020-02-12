@@ -1,9 +1,9 @@
 ---
 title: Michael Myers Actor Teases New Film's "Pumped Up" Action
-date: 2020-02-13
+date: 2020-02-07
 slug: Michael-Myers-Actor-Teases-New-Film-s
 published: true
-author: Christopher Fiduccia
+author: Chris Fiduccia
 ---
 
 Michael Myers actor James Jude Courtney says that Halloween Kills "pumped up" the action and horror compared to David Gordon Green's 2018 Halloween.

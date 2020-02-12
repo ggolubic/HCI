@@ -6,18 +6,19 @@ export const ItemLink = styled(Link)`
   text-decoration: none;
   display: flex;
   ${({ disabled }) =>
-    disabled &&
-    css`
-      pointer-events: none;
-      color: ${({ theme }) => theme.orbit.paletteInkLight};
-    `}
-
-  :hover {
+      disabled &&
+      css`
+        pointer-events: none;
+        color: ${({ theme }) => theme.orbit.paletteInkLight};
+      `}
+    :hover {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     transition: 0.3s all;
   }
 `
-
 export const PaginationContainer = styled.div`
   margin: 30px auto;
+`
+export const CurrentPageButton = styled.div`
+  color: green;
 `
