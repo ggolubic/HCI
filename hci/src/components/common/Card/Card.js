@@ -13,7 +13,8 @@ import {
 } from "./Card.styled"
 
 const Card = ({ title, poster, overview, date, path, id }) => {
-  const formattedDate = format(new Date(date), "MMMM dd yyyy")
+  const formattedDate = format(new Date(date), "MMMM dd, yyyy")
+  const [shortTitle, setShortTitle] = useState(title)
   const [shortOverview, setShortOverview] = useState(
     `${overview.slice(0, 150)}...`
   )
@@ -24,6 +25,13 @@ const Card = ({ title, poster, overview, date, path, id }) => {
       } else {
         setShortOverview(`${overview.slice(0, 150)}...`)
       }
+    }
+    if (title.length > 30) {
+      setShortTitle(`${title.slice(0, 30)}...`)
+      setShortOverview(`${overview.slice(0, 110)}...`)
+    }
+    if (title.length > 18 || formattedDate.length > 15) {
+      setShortOverview(`${overview.slice(0, 100)}...`)
     }
   }, [])
 
@@ -36,7 +44,7 @@ const Card = ({ title, poster, overview, date, path, id }) => {
             alt="Poster for show"
           />
           <Description>
-            <Title>{title}</Title>
+            <Title>{shortTitle}</Title>
             <ReleaseDate>{formattedDate}</ReleaseDate>
             <Overview>{shortOverview}</Overview>
           </Description>
