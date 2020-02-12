@@ -80,7 +80,7 @@ export const Border = styled.div`
     display: block;
     content: "";
     height: 1px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #dadce0;
     margin-bottom: 20px;
   }
 `
