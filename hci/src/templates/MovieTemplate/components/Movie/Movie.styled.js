@@ -70,14 +70,11 @@ export const FindOutMore = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 2vh;
   font-weight: 600;
   transition: 0.2s all;
   :hover {
     color: gray;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  @media screen and (max-width: 375px) {
-    font-size: 16px;
   }
 `
