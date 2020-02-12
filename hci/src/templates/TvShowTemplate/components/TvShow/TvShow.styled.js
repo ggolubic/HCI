@@ -45,7 +45,7 @@ export const ReleaseDate = styled.p`
   font-weight: 600;
   margin-bottom: 0px;
 `
-export const MovieDescription = styled.div`
+export const TvSeriesDescription = styled.div`
   margin-left: 20px;
 `
 export const Overview = styled.div`
@@ -61,7 +61,30 @@ export const Tag = styled.span`
     margin-right: 7px;
   }
 `
-export const FeaturedCast = styled.div`
+export const FindOutMore = styled.a`
+  display: inline-block;
+  text-decoration: none;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 2vh;
+  font-weight: 600;
+  transition: 0.2s all;
+  :hover {
+    color: gray;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+`
+export const Border = styled.div`
+  ::after {
+    display: block;
+    content: "";
+    height: 1px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+  }
+`
+export const FeaturedCastContainer = styled.div`
   margin-left: 20px;
 `
 export const FeaturedCastGrid = styled.div`
@@ -82,28 +105,5 @@ export const CastMember = styled.div`
   }
   @media screen and (max-width: 375px) {
     font-size: 16px;
-  }
-`
-export const Border = styled.div`
-  ::after {
-    display: block;
-    content: "";
-    height: 1px;
-    border-bottom: 1px solid gray;
-    margin-bottom: 20px;
-  }
-`
-export const FindOutMore = styled.a`
-  display: inline-block;
-  text-decoration: none;
-  color: ${({ theme }) => theme.orbit.paletteProductNormal};
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 2vh;
-  font-weight: 600;
-  transition: 0.2s all;
-  :hover {
-    color: gray;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 `

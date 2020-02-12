@@ -9,11 +9,11 @@ import {
   Title,
   ReleaseDate,
   Image,
-  MovieDescription,
+  TvSeriesDescription,
   Overview,
   Tags,
   Tag,
-  FeaturedCast,
+  FeaturedCastContainer,
   FeaturedCastGrid,
   CastMember,
   FindOutMore,
@@ -57,7 +57,7 @@ const TvShow = ({
       <Container>
         <Flex direction={direction}>
           <Image src={src} alt="Banner" row={direction === "row"} />
-          <MovieDescription>
+          <TvSeriesDescription>
             <Title>{name}</Title>
             <ReleaseDate>{`${format(
               new Date(first_air_date),
@@ -83,12 +83,12 @@ const TvShow = ({
               href={`https://www.imdb.com/title/${imdb_id}`}
               target="_blank"
             >
-              Find out more
+              Find out more on IMDb
             </FindOutMore>
-          </MovieDescription>
+          </TvSeriesDescription>
         </Flex>
         <Border />
-        <FeaturedCast>
+        <FeaturedCastContainer>
           <h4>Featured cast</h4>
           <FeaturedCastGrid>
             {featuredCast.map(person => (
@@ -104,7 +104,7 @@ const TvShow = ({
               </CastMember>
             ))}
           </FeaturedCastGrid>
-        </FeaturedCast>
+        </FeaturedCastContainer>
       </Container>
     </>
   )

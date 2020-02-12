@@ -13,7 +13,9 @@ import {
   Overview,
   Tags,
   Tag,
-  FeaturedCrew,
+  Border,
+  FeaturedCrewContainer,
+  FeaturedCrewGrid,
   CrewMember,
   FindOutMore,
   BackLink,
@@ -81,33 +83,48 @@ const Movie = ({
               <h4>Overview</h4>
               <p>{overview}</p>
             </Overview>
-            {featuredProducer || featuredWriter ? (
-              <>
-                <h4>Featured crew</h4>
-                <FeaturedCrew>
-                  {featuredProducer && (
-                    <CrewMember>
-                      {featuredProducer.name} ({featuredProducer.job})
-                    </CrewMember>
-                  )}
-                  {featuredWriter && (
-                    <CrewMember>
-                      , {featuredWriter.name} ({featuredWriter.job})
-                    </CrewMember>
-                  )}
-                </FeaturedCrew>
-              </>
-            ) : (
-              ""
-            )}
             <FindOutMore
               href={`https://www.imdb.com/title/${imdb_id}`}
               target="_blank"
             >
-              Find out more
+              Find out more on IMDb
             </FindOutMore>
           </MovieDescription>
         </Flex>
+        <Border />
+        {featuredProducer || featuredWriter ? (
+          <FeaturedCrewContainer>
+            <h4>Featured crew</h4>
+            <FeaturedCrewGrid>
+              {featuredProducer && (
+                <CrewMember>
+                  <a
+                    href={`http://www.google.com/search?q=${featuredProducer.name
+                      .split(" ")
+                      .join("+")}`}
+                  >
+                    {featuredProducer.name}
+                  </a>{" "}
+                  ({featuredProducer.job})
+                </CrewMember>
+              )}
+              {featuredWriter && (
+                <CrewMember>
+                  <a
+                    href={`http://www.google.com/search?q=${featuredWriter.name
+                      .split(" ")
+                      .join("+")}`}
+                  >
+                    {featuredWriter.name}
+                  </a>{" "}
+                  ({featuredWriter.job})
+                </CrewMember>
+              )}
+            </FeaturedCrewGrid>
+          </FeaturedCrewContainer>
+        ) : (
+          ""
+        )}
       </Container>
     </>
   )

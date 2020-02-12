@@ -61,26 +61,49 @@ export const Tag = styled.span`
     margin-right: 7px;
   }
 `
-export const FeaturedCrew = styled.div`
-  display: flex;
-`
-export const CrewMember = styled.div`
-  margin-right: 0px;
-  font-size: 1.7vh;
-  @media screen and (max-width: 375px) {
-    font-size: 16px;
-  }
-`
 export const FindOutMore = styled.a`
   display: inline-block;
   text-decoration: none;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 2vh;
   font-weight: 600;
   transition: 0.2s all;
   :hover {
     color: gray;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+`
+export const Border = styled.div`
+  ::after {
+    display: block;
+    content: "";
+    height: 1px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+  }
+`
+export const FeaturedCrewContainer = styled.div`
+  margin-left: 20px;
+`
+export const FeaturedCrewGrid = styled.div`
+  display: grid;
+  margin-top: 5px;
+`
+export const CrewMember = styled.div`
+  margin-right: 0px;
+  font-size: 1.7vh;
+  a {
+    color: ${({ theme }) => theme.orbit.paletteProductNormal};
+    text-decoration: none;
+    transition: 0.2s all;
+    :hover {
+      color: gray;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px;
   }
 `
