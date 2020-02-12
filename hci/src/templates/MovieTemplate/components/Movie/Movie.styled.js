@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 export const BackLink = styled(Link)`
@@ -6,7 +6,7 @@ export const BackLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 2.5vh;
   margin-bottom: 20px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.5s all;
@@ -15,7 +15,13 @@ export const BackLink = styled(Link)`
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 `
-export const Image = styled.img``
+export const Image = styled.img`
+  ${({ row }) =>
+    row &&
+    css`
+      height: 20em;
+    `}
+`
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
@@ -52,7 +58,7 @@ export const Tags = styled.div`
 `
 export const Tag = styled.span`
   :not(:last-of-type) {
-    margin-right: 5px;
+    margin-right: 7px;
   }
 `
 export const FeaturedCrew = styled.div`

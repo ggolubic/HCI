@@ -13,7 +13,7 @@ import {
 } from "./Post.styled"
 
 const Post = ({ post: { body, frontmatter } }) => {
-  const author = `http://www.google.com/search?q=${frontmatter.author
+  const authorSearch = `http://www.google.com/search?q=${frontmatter.author
     .split(" ")
     .join("+")}`
 
@@ -25,7 +25,7 @@ const Post = ({ post: { body, frontmatter } }) => {
       <PostContainer>
         <PostTitle>{frontmatter.title}</PostTitle>
         <PostDescription>
-          <PostAuthor href={author}>{frontmatter.author}</PostAuthor>
+          <PostAuthor href={authorSearch}>{frontmatter.author}</PostAuthor>
           <PostDate>{frontmatter.date}</PostDate>
         </PostDescription>
         <Body>

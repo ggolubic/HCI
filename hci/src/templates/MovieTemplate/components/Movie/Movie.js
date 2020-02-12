@@ -58,7 +58,7 @@ const Movie = ({
       </BackLink>
       <Container>
         <Flex direction={direction}>
-          <Image src={src} alt="Banner" />
+          <Image src={src} alt="Banner" row={direction === "row"} />
           <MovieDescription>
             <Title>{title}</Title>
             <ReleaseDate>{`${format(
