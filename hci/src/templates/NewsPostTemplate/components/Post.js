@@ -9,9 +9,14 @@ import {
   PostAuthor,
   PostDate,
   BackLink,
+  Body,
 } from "./Post.styled"
 
 const Post = ({ post: { body, frontmatter } }) => {
+  const author = `http://www.google.com/search?q=${frontmatter.author
+    .split(" ")
+    .join("+")}`
+
   return (
     <>
       <BackLink to="/">
@@ -20,10 +25,12 @@ const Post = ({ post: { body, frontmatter } }) => {
       <PostContainer>
         <PostTitle>{frontmatter.title}</PostTitle>
         <PostDescription>
-          <PostAuthor>{frontmatter.author}</PostAuthor>
+          <PostAuthor href={author}>{frontmatter.author}</PostAuthor>
           <PostDate>{frontmatter.date}</PostDate>
         </PostDescription>
-        <MDXRenderer>{body}</MDXRenderer>
+        <Body>
+          <MDXRenderer>{body}</MDXRenderer>
+        </Body>
       </PostContainer>
     </>
   )

@@ -16,7 +16,7 @@ const ShortPost = ({ title, date, slug, excerpt, author }) => {
         <PostTitle>{title}</PostTitle>
         <PostDescription>
           <PostAuthor>{author}</PostAuthor>
-          <PostTimeStamp>, {date}</PostTimeStamp>
+          <PostTimeStamp>{date}</PostTimeStamp>
         </PostDescription>
         <p>{excerpt}</p>
       </ShortPostContainer>

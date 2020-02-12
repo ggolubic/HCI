@@ -28,11 +28,29 @@ export const PostDescription = styled.div`
   display: flex;
   margin-bottom: 15px;
 `
-export const PostAuthor = styled.h3`
-  font-size: 15px;
+export const PostAuthor = styled.a`
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  transition: 0.5s all;
+  :hover {
+    color: gray;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 `
-export const PostDate = styled.h3`
-  font-size: 15px;
+export const PostDate = styled.p`
+  font-size: 16px;
   color: hsl(0, 0%, 45%);
-  margin-left: 10px;
+  font-weight: 600;
+  margin-left: 15px;
+`
+export const Body = styled.div`
+  img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 `

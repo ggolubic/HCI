@@ -25,7 +25,7 @@ export const PostTimeStamp = styled.h3`
   color: hsl(0, 0%, 45%);
   font-weight: 600;
   font-size: 16px;
-  margin: 0 0 15px 1px;
+  margin: 0 0 15px 15px;
 `
 export const PostAuthor = styled.h3`
   font-weight: 600;
