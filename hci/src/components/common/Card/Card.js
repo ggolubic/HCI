@@ -16,22 +16,27 @@ const Card = ({ title, poster, overview, date, path, id }) => {
   const formattedDate = format(new Date(date), "MMMM dd, yyyy")
   const [shortTitle, setShortTitle] = useState(title)
   const [shortOverview, setShortOverview] = useState(
-    `${overview.slice(0, 150)}...`
+    `${overview.slice(0, 210)}...`
   )
   useEffect(() => {
     if (window !== "undefined") {
       if (window.innerWidth === 768 || window.innerWidth === 320) {
-        setShortOverview(`${overview.slice(0, 90)}...`)
+        setShortOverview(`${overview.slice(0, 50)}...`)
+        if (title.length > 30) {
+          setShortTitle(`${title.slice(0, 30)}...`)
+        }
       } else {
+        setShortOverview(`${overview.slice(0, 250)}...`)
+      }
+      if (window.innerWidth < 1100 && window.innerWidth !== 768) {
+        setShortOverview(`${overview.slice(0, 100)}...`)
+      }
+      if (window.innerWidth > 450 && window.innerWidth < 768) {
         setShortOverview(`${overview.slice(0, 150)}...`)
       }
-    }
-    if (title.length > 30) {
-      setShortTitle(`${title.slice(0, 30)}...`)
-      setShortOverview(`${overview.slice(0, 110)}...`)
-    }
-    if (title.length > 18 || formattedDate.length > 15) {
-      setShortOverview(`${overview.slice(0, 100)}...`)
+      if (title.length > 40) {
+        setShortTitle(`${title.slice(0, 40)}...`)
+      }
     }
   }, [])
 

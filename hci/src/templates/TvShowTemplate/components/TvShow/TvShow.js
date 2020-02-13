@@ -97,10 +97,11 @@ const TvShow = ({
                   href={`http://www.google.com/search?q=${person.name
                     .split(" ")
                     .join("+")}`}
+                  target="_blank"
                 >
                   {person.name}
-                </a>{" "}
-                {person.character && `as ${person.character}`}
+                </a>
+                {person.character && ` as ${person.character}`}
               </CastMember>
             ))}
           </FeaturedCastGrid>

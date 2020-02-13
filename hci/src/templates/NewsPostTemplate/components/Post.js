@@ -25,7 +25,9 @@ const Post = ({ post: { body, frontmatter } }) => {
       <PostContainer>
         <PostTitle>{frontmatter.title}</PostTitle>
         <PostDescription>
-          <PostAuthor href={authorSearch}>{frontmatter.author}</PostAuthor>
+          <PostAuthor href={authorSearch} target="_blank">
+            {frontmatter.author}
+          </PostAuthor>
           <PostDate>{frontmatter.date}</PostDate>
         </PostDescription>
         <Body>
