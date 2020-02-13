@@ -75,7 +75,7 @@ const Movie = ({
             />
             <h4>Genre</h4>
             <Tags>
-              {genres.map((genre, index) => (
+              {genres.slice(0, 3).map((genre, index) => (
                 <Tag key={index}>{genre.name}</Tag>
               ))}
             </Tags>
