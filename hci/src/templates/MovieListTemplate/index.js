@@ -18,7 +18,7 @@ const MovieListTemplate = ({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 600) {
         setDirection("column")
       }
     }
@@ -62,7 +62,7 @@ const MovieListTemplate = ({
         rowGap="40px"
         maxWidth="100%"
         tablet={{
-          columns: "45% 45%",
+          columns: "50% 48%",
           columnGap: "2%",
         }}
       >

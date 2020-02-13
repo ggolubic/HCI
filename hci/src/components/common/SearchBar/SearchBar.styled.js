@@ -2,7 +2,6 @@ import styled, { css } from "styled-components"
 
 const SearchBar = styled.input`
   padding-left: 5px;
-  margin-right: 6.7vw;
   border: solid 0px ${({ theme }) => theme.orbit.paletteProductNormal};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: 0.2s all;
@@ -17,7 +16,6 @@ const SearchBar = styled.input`
       height: 4vh;
     `}
   @media screen and (max-width: 1280px) {
-    margin-right: 7.25vw;
     margin-top: 2px;
   }
   ::placeholder {

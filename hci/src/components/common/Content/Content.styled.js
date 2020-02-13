@@ -3,11 +3,14 @@ import styled from "styled-components"
 export const ContentContainer = styled.div`
   flex: 1;
   position: relative;
-  padding-right: 24px;
-  margin: 30px auto 30px 40px;
+  margin: 20px 40px 10px 90px;
+  padding-left: 30px;
   max-width: 95%;
-  padding-left: 50px;
   background-color: ${({ theme }) => theme.orbit.palleteCloudLight};
+  @media screen and (max-width: 1280px) {
+    margin: 20px 25px 10px 90px;
+    padding-left: 0px;
+  }
 `
 
 export const ChildrenContainer = styled.div``
