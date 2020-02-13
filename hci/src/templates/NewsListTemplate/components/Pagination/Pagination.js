@@ -5,7 +5,11 @@ import ChevronRight from "@kiwicom/orbit-components/lib/icons/ChevronRight"
 import ButtonLink from "@kiwicom/orbit-components/lib/ButtonLink"
 import Stack from "@kiwicom/orbit-components/lib/Stack"
 
-import { ItemLink, PaginationContainer } from "./Pagination.styled"
+import {
+  ItemLink,
+  PaginationContainer,
+  CurrentPageButton,
+} from "./Pagination.styled"
 
 const Pagination = ({ pageContext }) => {
   const { currentPage, numPages, pagePath } = pageContext
@@ -38,7 +42,7 @@ const Pagination = ({ pageContext }) => {
               title={`page ${i + 1}`}
               key={`pagination-number${i + 1}`}
             >
-              {i + 1}
+              <CurrentPageButton>{i + 1}</CurrentPageButton>
             </ButtonLink>
           ) : (
             <ItemLink

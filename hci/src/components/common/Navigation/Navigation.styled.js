@@ -32,6 +32,7 @@ export const ItemContainer = styled.div`
   width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
   height: 50px;
   border-left: 4px solid transparent;
+  border-color: gray;
   transition: all 150ms ease-in-out;
   color: transparent;
   overflow: hidden;

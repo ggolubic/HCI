@@ -6,14 +6,17 @@ import ArrowLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
 import Flex from "common/Flex/Flex"
 import {
   Container,
-  TitleAndYear,
+  Image,
+  Title,
+  ReleaseDate,
   MovieDescription,
   Overview,
   Tags,
   Tag,
-  FeaturedCrew,
+  Border,
+  FeaturedCrewContainer,
+  FeaturedCrewGrid,
   CrewMember,
-  CrewMemberName,
   FindOutMore,
   BackLink,
 } from "./Movie.styled"
@@ -57,18 +60,20 @@ const Movie = ({
       </BackLink>
       <Container>
         <Flex direction={direction}>
-          <img src={src} alt="Banner" />
+          <Image src={src} alt="Banner" row={direction === "row"} />
           <MovieDescription>
-            <TitleAndYear>
-              {title}
-              <span>{`(${format(new Date(release_date), "yyyy")})`}</span>
-            </TitleAndYear>
+            <Title>{title}</Title>
+            <ReleaseDate>{`${format(
+              new Date(release_date),
+              "MMMM dd, yyyy"
+            )}`}</ReleaseDate>
             <RatingStars
               rating={vote_average / 2}
               size="small"
-              color="primary"
+              color="secondary"
               showEmpty
             />
+            <h4>Genre</h4>
             <Tags>
               {genres.map((genre, index) => (
                 <Tag key={index}>{genre.name}</Tag>
@@ -78,29 +83,50 @@ const Movie = ({
               <h4>Overview</h4>
               <p>{overview}</p>
             </Overview>
-            <h4>Featured Crew</h4>
-            <FeaturedCrew>
-              {featuredProducer && (
-                <CrewMember>
-                  <CrewMemberName>{featuredProducer.name}</CrewMemberName>
-                  <span>{featuredProducer.job}</span>
-                </CrewMember>
-              )}
-              {featuredWriter && (
-                <CrewMember>
-                  <CrewMemberName>{featuredWriter.name}</CrewMemberName>
-                  <span>{featuredWriter.job}</span>
-                </CrewMember>
-              )}
-            </FeaturedCrew>
             <FindOutMore
               href={`https://www.imdb.com/title/${imdb_id}`}
               target="_blank"
             >
-              Find out more
+              Find out more on IMDb
             </FindOutMore>
           </MovieDescription>
         </Flex>
+        <Border />
+        {featuredProducer || featuredWriter ? (
+          <FeaturedCrewContainer>
+            <h4>Featured crew</h4>
+            <FeaturedCrewGrid>
+              {featuredProducer && (
+                <CrewMember>
+                  <a
+                    href={`http://www.google.com/search?q=${featuredProducer.name
+                      .split(" ")
+                      .join("+")}`}
+                    target="_blank"
+                  >
+                    {featuredProducer.name}
+                  </a>
+                  {featuredProducer.job && ` (${featuredProducer.job})`}
+                </CrewMember>
+              )}
+              {featuredWriter && (
+                <CrewMember>
+                  <a
+                    href={`http://www.google.com/search?q=${featuredWriter.name
+                      .split(" ")
+                      .join("+")}`}
+                    target="_blank"
+                  >
+                    {featuredWriter.name}
+                  </a>
+                  {featuredWriter.job && ` (${featuredWriter.job})`}
+                </CrewMember>
+              )}
+            </FeaturedCrewGrid>
+          </FeaturedCrewContainer>
+        ) : (
+          ""
+        )}
       </Container>
     </>
   )

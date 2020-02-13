@@ -6,14 +6,16 @@ import ArrowLeft from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
 import Flex from "common/Flex/Flex"
 import {
   Container,
-  TitleAndYear,
-  MovieDescription,
+  Title,
+  ReleaseDate,
+  Image,
+  TvSeriesDescription,
   Overview,
   Tags,
   Tag,
-  FeaturedCast,
+  FeaturedCastContainer,
+  FeaturedCastGrid,
   CastMember,
-  CastMemberName,
   FindOutMore,
   Border,
   BackLink,
@@ -54,18 +56,20 @@ const TvShow = ({
       </BackLink>
       <Container>
         <Flex direction={direction}>
-          <img src={src} alt="Banner" />
-          <MovieDescription>
-            <TitleAndYear>
-              {name}
-              <span>{`(${format(new Date(first_air_date), "yyyy")})`}</span>
-            </TitleAndYear>
+          <Image src={src} alt="Banner" row={direction === "row"} />
+          <TvSeriesDescription>
+            <Title>{name}</Title>
+            <ReleaseDate>{`${format(
+              new Date(first_air_date),
+              "MMMM dd, yyyy"
+            )}`}</ReleaseDate>
             <RatingStars
               rating={vote_average / 2}
               size="small"
-              color="primary"
+              color="secondary"
               showEmpty
             />
+            <h4>Genre</h4>
             <Tags>
               {genres.map((genre, index) => (
                 <Tag key={index}>{genre.name}</Tag>
@@ -79,20 +83,29 @@ const TvShow = ({
               href={`https://www.imdb.com/title/${imdb_id}`}
               target="_blank"
             >
-              Find out more
+              Find out more on IMDb
             </FindOutMore>
-          </MovieDescription>
+          </TvSeriesDescription>
         </Flex>
         <Border />
-        <h4>Featured Cast</h4>
-        <FeaturedCast>
-          {featuredCast.map(person => (
-            <CastMember>
-              <CastMemberName>{person.name}</CastMemberName>
-              <span>{person.character}</span>
-            </CastMember>
-          ))}
-        </FeaturedCast>
+        <FeaturedCastContainer>
+          <h4>Featured cast</h4>
+          <FeaturedCastGrid>
+            {featuredCast.map(person => (
+              <CastMember>
+                <a
+                  href={`http://www.google.com/search?q=${person.name
+                    .split(" ")
+                    .join("+")}`}
+                  target="_blank"
+                >
+                  {person.name}
+                </a>
+                {person.character && ` as ${person.character}`}
+              </CastMember>
+            ))}
+          </FeaturedCastGrid>
+        </FeaturedCastContainer>
       </Container>
     </>
   )
