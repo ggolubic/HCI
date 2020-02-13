@@ -37,7 +37,9 @@ const MovieListTemplate = ({
         }}
       >
         {list
-          .filter((movie, index) => movie.title.includes(search))
+          .filter(movie =>
+            movie.title.toLowerCase().includes(search.toLowerCase())
+          )
           .map((movie, index) => {
             return (
               <Card
