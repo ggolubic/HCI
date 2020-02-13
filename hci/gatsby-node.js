@@ -108,7 +108,7 @@ exports.createPages = async ({ actions, graphql }) => {
     context: {
       list: aggregatedMovieList,
       title: "Movies",
-      heading: "Top 20 Popular Movies",
+      heading: "Popular Movies",
       cardPath: "movies",
     },
   })
@@ -126,7 +126,7 @@ exports.createPages = async ({ actions, graphql }) => {
     context: {
       list: tvShowsList,
       title: "TV Shows",
-      heading: "Top 20 Popular TV Shows",
+      heading: "Popular TV Shows",
       cardPath: "tv_shows",
     },
   })
