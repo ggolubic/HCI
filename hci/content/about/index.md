@@ -4,7 +4,9 @@ slug: about
 published: false
 ---
 
-This site was created as a project for the course Human Computer Interaction. On this site the user can read about the latest news from the cinema/TV world and check out the latest and greatest Movies & TV shows!
+## What is MTN?
+
+Movies, TV shows & News (MTN) was created as a project for the course Human Computer Interaction. On this site the user can read about the latest news from the cinema/TV world and check out the current most popular movies and TV shows!
 
 ## Privacy Policy
 
