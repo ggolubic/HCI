@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 export const PostContainer = styled.div`
   background: #fff;
@@ -6,9 +7,12 @@ export const PostContainer = styled.div`
   border: 1px solid #dadce0;
   margin-bottom: 30px;
 `
-
+export const Image = styled(Img)`
+  margin: 5px auto 5px auto;
+  width: 20vw;
+`
 export const Body = styled.div`
-  font-size: 2vh;
+  font-size: 1.8vh;
   h1,
   h2,
   h3,
@@ -19,11 +23,8 @@ export const Body = styled.div`
   h4 {
     color: hsl(0, 0%, 45%);
   }
-  img {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2vh;
   }
 `

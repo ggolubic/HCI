@@ -4,11 +4,7 @@ slug: about
 published: false
 ---
 
-<img src="./images/mtnAbout.jpg" alt="about"/>
-
-This site was created as a project for the course Human Computer Interaction.
-The idea behind this site is to provide a user with all he needs to know about the cinema/tv world.
-Therefore, the user can read about the latest news from the cinema/tv world and check out the latest and greates movies & tv shows!
+This site was created as a project for the course Human Computer Interaction. On this site the user can read about the latest news from the cinema/TV world and check out the latest and greatest Movies & TV shows!
 
 ## Privacy Policy
 

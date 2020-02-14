@@ -48,7 +48,7 @@ export const PostDate = styled.p`
   margin-left: 15px;
 `
 export const Body = styled.div`
-  font-size: 2vh;
+  font-size: 1.8vh;
   h1,
   h2,
   h3,
@@ -62,5 +62,8 @@ export const Body = styled.div`
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 2vh;
   }
 `

@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "components/seo.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
 import { graphql, useStaticQuery } from "gatsby"
-import { PostContainer, Body } from "./About.styled"
+import { PostContainer, Image, Body } from "./About.styled"
 
 const AboutTemplate = ({ pageContext: { heading, title } }) => {
   const data = useStaticQuery(graphql`
@@ -16,6 +16,13 @@ const AboutTemplate = ({ pageContext: { heading, title } }) => {
           title
         }
       }
+      aboutImage: file(relativePath: { eq: "mtnAbout.jpg" }) {
+        sharp: childImageSharp {
+          fluid(maxWidth: 600, maxHeight: 524) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -25,6 +32,7 @@ const AboutTemplate = ({ pageContext: { heading, title } }) => {
       <SiteTitle>{heading}</SiteTitle>
       <PostContainer>
         <Body>
+          <Image fluid={data.aboutImage.sharp.fluid} alt="about" />
           <MDXRenderer>{data.post.body}</MDXRenderer>
         </Body>
       </PostContainer>
