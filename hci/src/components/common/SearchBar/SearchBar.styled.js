@@ -6,14 +6,13 @@ const SearchBar = styled.input`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: 0.2s all;
   margin-bottom: 25px;
-  width: 150px;
-  height: 3.3vh;
+  width: 200px;
+  height: 4vh;
+  font-size: 17px;
   ${({ direction }) =>
     direction === "row" &&
     css`
       margin-top: 10px;
-      width: 200px;
-      height: 4vh;
     `}
   @media screen and (max-width: 1280px) {
     margin-top: 2px;

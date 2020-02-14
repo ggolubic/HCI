@@ -10,8 +10,7 @@ const NewsList = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title="News" />
-
-      <SiteTitle>Headlines</SiteTitle>
+      <SiteTitle>News</SiteTitle>
       {data.allMdx.nodes.map(
         ({ excerpt, frontmatter: { slug, title, date, author } }) => (
           <ShortPost
