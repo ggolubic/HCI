@@ -25,12 +25,12 @@ export const PostTimeStamp = styled.h3`
   display: inline-block;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
-  font-size: 1.56vh;
+  font-size: 1.6vh;
   margin: 0 0 15px 15px;
 `
 export const PostAuthor = styled.h3`
   font-weight: 600;
-  font-size: 1.56vh;
+  font-size: 1.6vh;
   margin-bottom: 0;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
 `
@@ -39,6 +39,6 @@ export const PostDescription = styled.div`
   margin-top: 10px;
 `
 export const PostExcerpt = styled.p`
-  font-size: 1.7vh;
+  font-size: 1.8vh;
   margin-bottom: 7px;
 `

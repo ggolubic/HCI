@@ -27,10 +27,10 @@ export const PostTitle = styled.h1`
 `
 export const PostDescription = styled.div`
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 `
 export const PostAuthor = styled.a`
-  font-size: 1.7vh;
+  font-size: 1.9vh;
   text-decoration: none;
   font-weight: 600;
   padding-left: 2px;
@@ -42,13 +42,20 @@ export const PostAuthor = styled.a`
   }
 `
 export const PostDate = styled.p`
-  font-size: 1.7vh;
+  font-size: 1.9vh;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
   margin-left: 15px;
 `
 export const Body = styled.div`
-  font-size: 1.8vh;
+  font-size: 2vh;
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 2px;
+    margin-top: 20px;
+  }
   img {
     display: flex;
     justify-content: center;

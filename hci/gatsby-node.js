@@ -147,15 +147,13 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
 
-  //Editors Blog
+  //About
   createPage({
-    path: `/editors_blog`,
-    component: path.resolve("src/templates/EditorsBlogTemplate/index.js"),
+    path: `/about`,
+    component: path.resolve("src/templates/AboutTemplate/About.js"),
     context: {
-      list: tvShowsList,
-      title: "Editor's Blog",
-      heading: "Editor's Blog",
-      cardPath: "editors_blog",
+      title: "About",
+      heading: "About",
     },
   })
 }

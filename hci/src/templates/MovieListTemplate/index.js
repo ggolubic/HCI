@@ -4,8 +4,8 @@ import Grid from "@kiwicom/orbit-components/lib/utils/Grid"
 import SEO from "components/seo.js"
 import Layout from "components/layout.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
+import SearchBar from "common/SearchBar/SearchBar"
 import Card from "common/Card/Card"
-import SearchBar from "common/SearchBar/SearchBar.styled.js"
 import Flex from "common/Flex/Flex"
 
 const MovieListTemplate = ({
@@ -42,7 +42,7 @@ const MovieListTemplate = ({
           }
         })
       )
-    }, 100)
+    }, 500)
   }, [search])
 
   return (

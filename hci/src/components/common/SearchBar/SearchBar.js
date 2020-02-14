@@ -24,7 +24,10 @@ const SearchBar = styled.input`
     border: solid 1px ${({ theme }) => theme.orbit.paletteProductNormal};
   }
   @media screen and (max-width: 1280px) {
-    margin-top: 2px;
+    margin-top: 5px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin-top: 3px;
   }
   @media screen and (max-width: 370px) {
     margin-right: auto;
