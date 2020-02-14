@@ -6,17 +6,14 @@ const SearchBar = styled.input`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: 0.2s all;
   margin-bottom: 25px;
-  width: 200px;
-  height: 4vh;
+  width: calc(20vw + 50px);
+  height: calc(3vh + 10px);
   font-size: 17px;
   ${({ direction }) =>
     direction === "row" &&
     css`
       margin-top: 10px;
     `}
-  @media screen and (max-width: 1280px) {
-    margin-top: 2px;
-  }
   ::placeholder {
     color: grey;
   }
@@ -25,6 +22,16 @@ const SearchBar = styled.input`
   }
   :focus {
     border: solid 1px ${({ theme }) => theme.orbit.paletteProductNormal};
+  }
+  @media screen and (max-width: 1280px) {
+    margin-top: 2px;
+  }
+  @media screen and (max-width: 370px) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media screen and (max-height: 550px) {
+    height: 30px;
   }
 `
 export default SearchBar

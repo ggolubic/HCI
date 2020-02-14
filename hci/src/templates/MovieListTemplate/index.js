@@ -18,7 +18,7 @@ const MovieListTemplate = ({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth < 450) {
+      if (window.innerWidth < 370) {
         setDirection("column")
       }
     }
