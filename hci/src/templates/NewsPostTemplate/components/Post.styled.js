@@ -18,7 +18,8 @@ export const BackLink = styled(Link)`
 export const PostContainer = styled.div`
   background: #fff;
   padding: 20px;
-  border: 1px solid #dadce0;
+  border: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   margin-bottom: 30px;
 `
 export const PostTitle = styled.h1`

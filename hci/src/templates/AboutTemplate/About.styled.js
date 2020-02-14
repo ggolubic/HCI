@@ -4,8 +4,10 @@ import Img from "gatsby-image"
 export const PostContainer = styled.div`
   background: #fff;
   padding: 20px;
-  border: 1px solid #dadce0;
+  border: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   margin-bottom: 30px;
+  margin-top: 20px;
 `
 export const Image = styled(Img)`
   margin: 5px auto 5px auto;

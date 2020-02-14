@@ -25,7 +25,8 @@ export const Image = styled.img`
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
-  border: 1px solid #dadce0;
+  border: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   h4 {
     margin-top: 10px;
     margin-bottom: 0;
