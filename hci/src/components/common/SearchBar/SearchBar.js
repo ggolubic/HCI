@@ -23,10 +23,10 @@ const SearchBar = styled.input`
   :focus {
     border: solid 2px ${({ theme }) => theme.orbit.paletteProductNormal};
   }
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1500px) {
     margin-top: 5px;
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 900px) {
     margin-top: 3px;
   }
   @media screen and (max-width: 370px) {

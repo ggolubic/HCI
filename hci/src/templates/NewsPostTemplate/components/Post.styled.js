@@ -23,15 +23,17 @@ export const PostContainer = styled.div`
   margin-bottom: 30px;
 `
 export const PostTitle = styled.h1`
-  margin-bottom: 10px;
-  font-size: 3vh;
+  margin-bottom: 5px;
+  font-size: 1.5em;
 `
 export const PostDescription = styled.div`
   display: flex;
-  margin-bottom: 0;
+  margin-bottom: 15px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #dadce0;
 `
 export const PostAuthor = styled.a`
-  font-size: 1.9vh;
+  font-size: 1em;
   text-decoration: none;
   font-weight: 600;
   padding-left: 2px;
@@ -43,7 +45,7 @@ export const PostAuthor = styled.a`
   }
 `
 export const PostDate = styled.p`
-  font-size: 1.9vh;
+  font-size: 1em;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
   margin-left: 15px;
@@ -57,14 +59,7 @@ export const Body = styled.div`
     margin-bottom: 2px;
     margin-top: 20px;
   }
-  img {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-height: 768px) {
     font-size: 2vh;
   }
 `

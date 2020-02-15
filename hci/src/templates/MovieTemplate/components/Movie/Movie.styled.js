@@ -41,7 +41,7 @@ export const Title = styled.h1`
   }
 `
 export const ReleaseDate = styled.p`
-  font-size: 1.7vh;
+  font-size: 1.9vh;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
   margin-bottom: 0px;
@@ -51,11 +51,11 @@ export const MovieDescription = styled.div`
 `
 export const Overview = styled.div`
   margin-top: 15px;
-  font-size: 1.7vh;
+  font-size: 1.8vh;
 `
 export const Tags = styled.div`
   display: flex;
-  font-size: 1.7vh;
+  font-size: 1.8vh;
 `
 export const Tag = styled.span`
   :not(:last-of-type) {
@@ -90,11 +90,11 @@ export const FeaturedCrewContainer = styled.div`
 `
 export const FeaturedCrewGrid = styled.div`
   display: grid;
-  margin-top: 5px;
+  margin-top: 0px;
 `
 export const CrewMember = styled.div`
   margin-right: 0px;
-  font-size: 1.7vh;
+  font-size: 1.8vh;
   a {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     text-decoration: none;
@@ -103,8 +103,5 @@ export const CrewMember = styled.div`
       color: gray;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-  }
-  @media screen and (max-width: 375px) {
-    font-size: 16px;
   }
 `

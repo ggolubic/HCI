@@ -18,27 +18,29 @@ export const PostLink = styled(Link)`
 
 export const PostTitle = styled.h2`
   margin-bottom: 0px;
-  font-size: 3vh;
+  font-size: 1.3em;
 `
 
 export const PostTimeStamp = styled.h3`
   display: inline-block;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
-  font-size: 1.6vh;
+  font-size: 0.8em;
   margin: 0 0 15px 15px;
 `
 export const PostAuthor = styled.h3`
   font-weight: 600;
-  font-size: 1.6vh;
   margin-bottom: 0;
+  font-size: 0.8em;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
 `
 export const PostDescription = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dadce0;
 `
 export const PostExcerpt = styled.p`
-  font-size: 1.8vh;
+  font-size: 0.8em;
   margin-bottom: 7px;
 `

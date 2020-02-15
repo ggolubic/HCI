@@ -22,11 +22,14 @@ export const Body = styled.div`
     margin-bottom: 2px;
     margin-top: 20px;
   }
+  h1,
+  h2 {
+    font-size: 1.5em;
+  }
   h4 {
     color: hsl(0, 0%, 45%);
   }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-height: 768px) {
     font-size: 2vh;
   }
 `
