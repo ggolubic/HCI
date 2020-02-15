@@ -31,9 +31,7 @@ const AboutTemplate = ({ pageContext: { heading, title } }) => {
     <Layout>
       <SEO title={title} />
       <Flex direction="row" justify="space-between">
-        <SiteTitle>
-          <a>{heading}</a>
-        </SiteTitle>
+        <SiteTitle>{heading}</SiteTitle>
       </Flex>
       <PostContainer>
         <Body>
