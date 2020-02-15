@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const ShortPostContainer = styled.div`
-  margin: 20px auto;
+  margin: 15px auto;
   padding: 10px;
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

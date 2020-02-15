@@ -29,7 +29,10 @@ const AboutTemplate = ({ pageContext: { heading, title } }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <SiteTitle>{heading}</SiteTitle>
+      <SiteTitle>
+        <a>{heading}</a>
+        <div id="borderLeft"></div>
+      </SiteTitle>
       <PostContainer>
         <Body>
           <Image fluid={data.aboutImage.sharp.fluid} alt="about" />

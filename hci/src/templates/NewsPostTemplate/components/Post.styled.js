@@ -7,7 +7,7 @@ export const BackLink = styled(Link)`
   text-decoration: none;
   font-weight: 400;
   font-size: 2.5vh;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.5s all;
   :hover {

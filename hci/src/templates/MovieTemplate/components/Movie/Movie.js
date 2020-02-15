@@ -91,39 +91,41 @@ const Movie = ({
             </FindOutMore>
           </MovieDescription>
         </Flex>
-        <Border />
         {featuredProducer || featuredWriter ? (
-          <FeaturedCrewContainer>
-            <h4>Featured crew</h4>
-            <FeaturedCrewGrid>
-              {featuredProducer && (
-                <CrewMember>
-                  <a
-                    href={`http://www.google.com/search?q=${featuredProducer.name
-                      .split(" ")
-                      .join("+")}`}
-                    target="_blank"
-                  >
-                    {featuredProducer.name}
-                  </a>
-                  {featuredProducer.job && ` (${featuredProducer.job})`}
-                </CrewMember>
-              )}
-              {featuredWriter && (
-                <CrewMember>
-                  <a
-                    href={`http://www.google.com/search?q=${featuredWriter.name
-                      .split(" ")
-                      .join("+")}`}
-                    target="_blank"
-                  >
-                    {featuredWriter.name}
-                  </a>
-                  {featuredWriter.job && ` (${featuredWriter.job})`}
-                </CrewMember>
-              )}
-            </FeaturedCrewGrid>
-          </FeaturedCrewContainer>
+          <>
+            <Border />
+            <FeaturedCrewContainer>
+              <h4>Featured crew</h4>
+              <FeaturedCrewGrid>
+                {featuredProducer && (
+                  <CrewMember>
+                    <a
+                      href={`http://www.google.com/search?q=${featuredProducer.name
+                        .split(" ")
+                        .join("+")}`}
+                      target="_blank"
+                    >
+                      {featuredProducer.name}
+                    </a>
+                    {featuredProducer.job && ` (${featuredProducer.job})`}
+                  </CrewMember>
+                )}
+                {featuredWriter && (
+                  <CrewMember>
+                    <a
+                      href={`http://www.google.com/search?q=${featuredWriter.name
+                        .split(" ")
+                        .join("+")}`}
+                      target="_blank"
+                    >
+                      {featuredWriter.name}
+                    </a>
+                    {featuredWriter.job && ` (${featuredWriter.job})`}
+                  </CrewMember>
+                )}
+              </FeaturedCrewGrid>
+            </FeaturedCrewContainer>
+          </>
         ) : (
           ""
         )}

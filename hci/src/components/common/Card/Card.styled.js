@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 export const Image = styled.img`
   height: 250px;
   margin: 0 !important;
-  border-right: solid 1px rgba(0, 0, 0, 0.1);
+  border-right: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
 
   @media screen and (max-width: 500px) {
     height: 225px;

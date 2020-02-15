@@ -5,7 +5,7 @@ const SearchBar = styled.input`
   border: solid 0px ${({ theme }) => theme.orbit.paletteProductNormal};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: 0.2s all;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   width: calc(20vw + 50px);
   height: calc(3vh + 10px);
   font-size: 17px;
@@ -21,7 +21,7 @@ const SearchBar = styled.input`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
   :focus {
-    border: solid 1px ${({ theme }) => theme.orbit.paletteProductNormal};
+    border: solid 2px ${({ theme }) => theme.orbit.paletteProductNormal};
   }
   @media screen and (max-width: 1280px) {
     margin-top: 5px;

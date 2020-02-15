@@ -49,7 +49,9 @@ const MovieListTemplate = ({
     <Layout>
       <SEO title={title} />
       <Flex direction={direction} justify="space-between">
-        <SiteTitle>{heading}</SiteTitle>
+        <SiteTitle>
+          <a>{heading}</a>
+        </SiteTitle>
         <SearchBar
           type="text"
           placeholder="Search..."
@@ -59,7 +61,7 @@ const MovieListTemplate = ({
         />
       </Flex>
       <Grid
-        rowGap="40px"
+        rowGap="25px"
         maxWidth="100%"
         tablet={{
           columns: "50% 48%",
