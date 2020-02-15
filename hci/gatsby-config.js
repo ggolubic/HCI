@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `about`,
-        path: `${__dirname}/content/about`,
+        name: `aboutPage`,
+        path: `${__dirname}/content/aboutPage`,
       },
     },
     `gatsby-transformer-remark`,
@@ -39,7 +39,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
-        path: `${__dirname}/content/about`,
+        path: `${__dirname}/content/aboutPage`,
       },
     },
     `gatsby-plugin-sharp`,

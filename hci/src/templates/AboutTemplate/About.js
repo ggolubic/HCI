@@ -1,15 +1,15 @@
 import React from "react"
 import Layout from "components/layout.js"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "components/seo.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, useStaticQuery } from "gatsby"
 import { PostContainer, Image, Body } from "./About.styled"
 
 const AboutTemplate = ({ pageContext: { heading, title } }) => {
   const data = useStaticQuery(graphql`
     query {
-      post: mdx(frontmatter: { slug: { eq: "about" } }) {
+      post: mdx(frontmatter: { slug: { eq: "about-page" } }) {
         body
         frontmatter {
           slug

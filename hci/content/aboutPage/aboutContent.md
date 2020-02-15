@@ -1,6 +1,6 @@
 ---
 title: "About Page"
-slug: about
+slug: about-page
 published: false
 ---
 
