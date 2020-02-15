@@ -12,9 +12,7 @@ const NewsList = ({ data, pageContext }) => {
     <Layout>
       <SEO title="News" />
       <Flex direction="row" justify="space-between">
-        <SiteTitle>
-          <a>News</a>
-        </SiteTitle>
+        <SiteTitle>News</SiteTitle>
       </Flex>
       {data.allMdx.nodes.map(
         ({ excerpt, frontmatter: { slug, title, date, author } }) => (
