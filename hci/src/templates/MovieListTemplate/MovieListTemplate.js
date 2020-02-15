@@ -61,7 +61,7 @@ const MovieListTemplate = ({
         />
       </Flex>
       <Grid
-        rowGap="25px"
+        rowGap="10px"
         maxWidth="100%"
         tablet={{
           columns: "50% 48%",

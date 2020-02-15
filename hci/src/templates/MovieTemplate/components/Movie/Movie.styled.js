@@ -6,7 +6,6 @@ export const BackLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   font-weight: 400;
-  font-size: 2.5vh;
   margin-bottom: 10px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.5s all;
@@ -25,23 +24,18 @@ export const Image = styled.img`
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
+  margin-bottom: 25px;
   border: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   h4 {
     margin-top: 10px;
     margin-bottom: 0;
-    font-size: 2vh;
   }
 `
 export const Title = styled.h1`
-  margin-bottom: 00px;
-  font-size: 3vh;
-  @media screen and (max-width: 375px) {
-    font-size: 25px;
-  }
+  margin-bottom: 0px;
 `
 export const ReleaseDate = styled.p`
-  font-size: 1.9vh;
   color: hsl(0, 0%, 45%);
   font-weight: 600;
   margin-bottom: 0px;
@@ -51,11 +45,9 @@ export const MovieDescription = styled.div`
 `
 export const Overview = styled.div`
   margin-top: 15px;
-  font-size: 1.8vh;
 `
 export const Tags = styled.div`
   display: flex;
-  font-size: 1.8vh;
 `
 export const Tag = styled.span`
   :not(:last-of-type) {
@@ -68,7 +60,6 @@ export const FindOutMore = styled.a`
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   margin-top: 15px;
   margin-bottom: 15px;
-  font-size: 2vh;
   font-weight: 600;
   transition: 0.2s all;
   :hover {
@@ -94,7 +85,6 @@ export const FeaturedCrewGrid = styled.div`
 `
 export const CrewMember = styled.div`
   margin-right: 0px;
-  font-size: 1.8vh;
   a {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     text-decoration: none;

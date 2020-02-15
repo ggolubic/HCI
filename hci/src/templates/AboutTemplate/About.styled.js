@@ -14,7 +14,6 @@ export const Image = styled(Img)`
   width: 20vw;
 `
 export const Body = styled.div`
-  font-size: 1.8vh;
   h1,
   h2,
   h3,
@@ -24,12 +23,9 @@ export const Body = styled.div`
   }
   h1,
   h2 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   h4 {
     color: hsl(0, 0%, 45%);
-  }
-  @media screen and (max-height: 768px) {
-    font-size: 2vh;
   }
 `

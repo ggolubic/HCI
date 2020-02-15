@@ -95,7 +95,6 @@ export const NavigationContainer = styled.div`
 export const Footer = styled.div`
   position: absolute;
   font-family: ${({ theme }) => theme.font.family};
-  font-size: 1em;
   left: 0;
   bottom: 0;
   width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;

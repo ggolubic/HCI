@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "components/layout.js"
 import SEO from "components/seo.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
+import Flex from "common/Flex/Flex"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, useStaticQuery } from "gatsby"
 import { PostContainer, Image, Body } from "./About.styled"
@@ -29,10 +30,11 @@ const AboutTemplate = ({ pageContext: { heading, title } }) => {
   return (
     <Layout>
       <SEO title={title} />
-      <SiteTitle>
-        <a>{heading}</a>
-        <div id="borderLeft"></div>
-      </SiteTitle>
+      <Flex direction="row" justify="space-between">
+        <SiteTitle>
+          <a>{heading}</a>
+        </SiteTitle>
+      </Flex>
       <PostContainer>
         <Body>
           <Image fluid={data.aboutImage.sharp.fluid} alt="about" />
