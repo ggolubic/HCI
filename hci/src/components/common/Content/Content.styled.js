@@ -7,7 +7,7 @@ export const ContentContainer = styled.div`
   padding-left: 30px;
   max-width: 95%;
   background-color: ${({ theme }) => theme.orbit.palleteCloudLight};
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     margin: 20px 25px 10px 90px;
     padding-left: 0px;
   }
