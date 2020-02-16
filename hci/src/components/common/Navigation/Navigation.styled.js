@@ -94,12 +94,33 @@ export const NavigationContainer = styled.div`
 `
 export const Footer = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
   font-family: ${({ theme }) => theme.font.family};
   left: 0;
   bottom: 0;
   width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
-  color: gray;
+  color: grey;
   text-align: center;
   margin-bottom: 10px;
   line-height: 5px;
+  font-size: 1.2em;
+  @media only screen and (max-height: 768px) {
+    font-size: 1em;
+  }
+`
+export const VisitContainer = styled.div`
+  font-size: 1.7em;
+`
+export const VisitItem = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  transition: 0.2s all ease-in-out;
+  padding: 1px;
+  :not(:last-of-type) {
+    margin-right: 2px;
+  }
+  :hover {
+    color: grey;
+  }
 `
