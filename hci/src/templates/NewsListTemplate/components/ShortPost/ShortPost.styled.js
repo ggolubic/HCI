@@ -10,6 +10,9 @@ export const ShortPostContainer = styled.div`
   :hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
+  @media screen and (max-width: 369px) {
+    margin: 20px auto 0 0;
+  }
 `
 export const PostLink = styled(Link)`
   color: black;

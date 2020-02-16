@@ -7,6 +7,9 @@ export const PostContainer = styled.div`
   border: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   margin-bottom: 30px;
+  @media screen and (max-width: 369px) {
+    margin: 20px auto 0 0;
+  }
 `
 export const Image = styled(Img)`
   margin: 5px auto 5px auto;
