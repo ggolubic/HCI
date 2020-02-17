@@ -1,6 +1,6 @@
-# Human Computer Interfaces (HCI)
+# Human Computer Interaction (HCI)
 
-University project for the course Human Computer Interfaces (Korisnička Sučelja).
+University project for the course Human Computer Interaction.
 
 Made by:
 
