@@ -8,6 +8,10 @@ published: false
 
 Movies, TV shows & News (MTN) was created as a project for the course Human Computer Interaction. On this site the user can read about the latest news from the cinema/TV world and check out the current most popular movies and TV shows!
 
+## Need help?
+
+Check out the official help documentation at https://www.helpandmanual.com/, or message us on our social media pages; links are at the bottom of the sidebar.
+
 ## Privacy Policy
 
 The privacy of our visitors is important to us.

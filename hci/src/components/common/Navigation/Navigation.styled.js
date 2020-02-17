@@ -104,9 +104,8 @@ export const Footer = styled.div`
   text-align: center;
   margin-bottom: 10px;
   line-height: 5px;
-  font-size: 1.2em;
   @media only screen and (max-height: 768px) {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 `
 export const VisitContainer = styled.div`
