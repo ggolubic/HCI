@@ -28,6 +28,6 @@ export const Body = styled.div`
     font-size: 1.3em;
   }
   h4 {
-    color: hsl(0, 0%, 45%);
+    color: hsl(0, 0%, 46%);
   }
 `
