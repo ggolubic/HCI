@@ -7,6 +7,7 @@ import {
   PostTitle,
   PostDescription,
   PostAuthor,
+  DescriptionSplitter,
   PostDate,
   BackLink,
   Body,
@@ -28,6 +29,7 @@ const Post = ({ post: { body, frontmatter } }) => {
           <PostAuthor href={authorSearch} target="_blank">
             {frontmatter.author}
           </PostAuthor>
+          <DescriptionSplitter>|</DescriptionSplitter>
           <PostDate>{frontmatter.date}</PostDate>
         </PostDescription>
         <Body>

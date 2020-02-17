@@ -22,11 +22,24 @@ module.exports = {
         path: `${__dirname}/content/news`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `aboutPage`,
+        path: `${__dirname}/content/aboutPage`,
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/news`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/aboutPage`,
       },
     },
     `gatsby-plugin-sharp`,

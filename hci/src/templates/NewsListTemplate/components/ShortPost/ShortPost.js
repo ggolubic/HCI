@@ -4,8 +4,9 @@ import {
   ShortPostContainer,
   PostLink,
   PostTitle,
-  PostTimeStamp,
   PostAuthor,
+  DescriptionSplitter,
+  PostTimeStamp,
   PostDescription,
   PostExcerpt,
 } from "./ShortPost.styled"
@@ -17,6 +18,7 @@ const ShortPost = ({ title, date, slug, excerpt, author }) => {
         <PostTitle>{title}</PostTitle>
         <PostDescription>
           <PostAuthor>{author}</PostAuthor>
+          <DescriptionSplitter>|</DescriptionSplitter>
           <PostTimeStamp>{date}</PostTimeStamp>
         </PostDescription>
         <PostExcerpt>{excerpt}</PostExcerpt>

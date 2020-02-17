@@ -1,4 +1,4 @@
-import { FaFilm, FaTv, FaBookOpen, FaPen } from "react-icons/fa"
+import { FaFilm, FaTv, FaBookOpen, FaQuestionCircle } from "react-icons/fa"
 const MOVIES = {
   name: "Movies",
   path: "/movies",
@@ -17,10 +17,10 @@ const NEWS = {
   default: true,
   Icon: FaBookOpen,
 }
-const EDITORS_BLOG = {
-  name: "Editor's Blog",
-  path: "/editors_blog",
-  Icon: FaPen,
+const ABOUT = {
+  name: "About",
+  path: "/about",
+  Icon: FaQuestionCircle,
 }
 
-export const mainNavigationItems = [NEWS, MOVIES, TV_SHOWS, EDITORS_BLOG]
+export const mainNavigationItems = [NEWS, MOVIES, TV_SHOWS, ABOUT]

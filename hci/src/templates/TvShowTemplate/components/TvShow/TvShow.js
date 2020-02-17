@@ -66,12 +66,12 @@ const TvShow = ({
             <RatingStars
               rating={vote_average / 2}
               size="small"
-              color="secondary"
+              color="primary"
               showEmpty
             />
             <h4>Genre</h4>
             <Tags>
-              {genres.map((genre, index) => (
+              {genres.slice(0, 3).map((genre, index) => (
                 <Tag key={index}>{genre.name}</Tag>
               ))}
             </Tags>
@@ -92,7 +92,7 @@ const TvShow = ({
           <h4>Featured cast</h4>
           <FeaturedCastGrid>
             {featuredCast.map(person => (
-              <CastMember>
+              <CastMember key={person.name + person.character}>
                 <a
                   href={`http://www.google.com/search?q=${person.name
                     .split(" ")

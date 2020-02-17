@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 export const Image = styled.img`
   height: 250px;
   margin: 0 !important;
+  border-right: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
 
   @media screen and (max-width: 500px) {
     height: 225px;
@@ -13,7 +15,7 @@ export const Image = styled.img`
   }
   @media screen and (max-width: 385px) {
     height: 180px;
-    width: 40%;
+    width: 50%;
   }
 `
 export const Container = styled.div`
@@ -38,7 +40,7 @@ export const Description = styled.div`
   }
 `
 export const Title = styled.h3`
-  margin: 8px 5px 5px 15px;
+  margin: 8px 5px 0px 15px;
   font-size: 1.2em;
   @media screen and (max-width: 900px) {
     font-size: 1.1em;
@@ -52,9 +54,10 @@ export const Title = styled.h3`
   }
 `
 export const ReleaseDate = styled.span`
-  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  color: hsl(0, 0%, 60%);
   line-height: 1em;
   font-size: 0.85em;
+  font-weight: 1000;
   margin-left: 15px;
   @media screen and (max-width: 900px) {
     font-size: 0.825em;

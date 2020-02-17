@@ -5,13 +5,15 @@ import SEO from "components/seo.js"
 import ShortPost from "./components/ShortPost/ShortPost.js"
 import Pagination from "./components/Pagination/Pagination.js"
 import SiteTitle from "common/SiteTitle/SiteTitle"
+import Flex from "common/Flex/Flex"
 
 const NewsList = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title="News" />
-
-      <SiteTitle>Headlines</SiteTitle>
+      <Flex direction="row" justify="space-between">
+        <SiteTitle>News</SiteTitle>
+      </Flex>
       {data.allMdx.nodes.map(
         ({ excerpt, frontmatter: { slug, title, date, author } }) => (
           <ShortPost

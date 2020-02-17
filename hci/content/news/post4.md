@@ -1,6 +1,6 @@
 ---
 title: Oscars Tries To Explain Luke Perry’s In Memoriam Omission
-date: 2019-09-10
+date: 2020-02-10
 slug: oscars-2020-luke-perry-memoriam-omission-explained
 published: true
 author: Dan Zinski

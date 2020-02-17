@@ -5,9 +5,8 @@ export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 400;
-  font-size: 2.5vh;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.5s all;
   :hover {
@@ -21,40 +20,40 @@ export const Image = styled.img`
     css`
       height: 20em;
     `}
+  @media screen and (max-width: 799px) {
+    margin-bottom: 10px;
+  }
 `
 export const Container = styled.div`
   background: #fff;
   padding: 20px;
-  border: 1px solid #dadce0;
+  margin-bottom: 25px;
+  border: ${({ theme }) =>
+    `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   h4 {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 0;
-    font-size: 2vh;
   }
 `
-export const Title = styled.h1`
-  margin-bottom: 00px;
-  font-size: 3vh;
-  @media screen and (max-width: 375px) {
-    font-size: 25px;
-  }
+export const Title = styled.h2`
+  margin-bottom: 0px;
 `
 export const ReleaseDate = styled.p`
-  font-size: 1.7vh;
-  color: hsl(0, 0%, 45%);
+  color: hsl(0, 0%, 60%);
   font-weight: 600;
   margin-bottom: 0px;
 `
 export const MovieDescription = styled.div`
   margin-left: 20px;
+  @media screen and (max-width: 799px) {
+    margin-left: 0px;
+  }
 `
 export const Overview = styled.div`
   margin-top: 15px;
-  font-size: 1.7vh;
 `
 export const Tags = styled.div`
   display: flex;
-  font-size: 1.7vh;
 `
 export const Tag = styled.span`
   :not(:last-of-type) {
@@ -65,9 +64,8 @@ export const FindOutMore = styled.a`
   display: inline-block;
   text-decoration: none;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 15px;
-  font-size: 2vh;
   font-weight: 600;
   transition: 0.2s all;
   :hover {
@@ -86,14 +84,15 @@ export const Border = styled.div`
 `
 export const FeaturedCrewContainer = styled.div`
   margin-left: 20px;
+  @media screen and (max-width: 799px) {
+    margin-left: 0px;
+  }
 `
 export const FeaturedCrewGrid = styled.div`
   display: grid;
-  margin-top: 5px;
+  margin-top: 3px;
 `
 export const CrewMember = styled.div`
-  margin-right: 0px;
-  font-size: 1.7vh;
   a {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     text-decoration: none;
@@ -102,8 +101,5 @@ export const CrewMember = styled.div`
       color: gray;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-  }
-  @media screen and (max-width: 375px) {
-    font-size: 16px;
   }
 `

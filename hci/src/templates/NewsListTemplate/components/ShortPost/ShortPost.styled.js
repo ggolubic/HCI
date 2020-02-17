@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const ShortPostContainer = styled.div`
-  margin: 20px auto;
+  margin: 0 auto 25px 0;
   padding: 10px;
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -10,35 +10,42 @@ export const ShortPostContainer = styled.div`
   :hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
+  @media screen and (max-width: 369px) {
+    margin: 20px auto 0 0;
+  }
 `
 export const PostLink = styled(Link)`
   color: black;
   text-decoration: none;
 `
-
 export const PostTitle = styled.h2`
   margin-bottom: 0px;
-  font-size: 3vh;
-`
-
-export const PostTimeStamp = styled.h3`
-  display: inline-block;
-  color: hsl(0, 0%, 45%);
-  font-weight: 600;
-  font-size: 1.56vh;
-  margin: 0 0 15px 15px;
-`
-export const PostAuthor = styled.h3`
-  font-weight: 600;
-  font-size: 1.56vh;
-  margin-bottom: 0;
-  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  font-size: 1.3em;
 `
 export const PostDescription = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 0px;
+`
+export const PostAuthor = styled.p`
+  font-size: 0.8em;
+  font-weight: 1000;
+  color: hsl(0, 0%, 60%);
+  margin-bottom: 0px;
+`
+export const DescriptionSplitter = styled.p`
+  color: hsl(0, 0%, 60%);
+  font-size: 0.8em;
+  font-weight: 1000;
+  margin: 0px 4px 5px 4px;
+`
+export const PostTimeStamp = styled.p`
+  color: hsl(0, 0%, 60%);
+  font-weight: 1000;
+  font-size: 0.8em;
+  margin-bottom: 0px;
 `
 export const PostExcerpt = styled.p`
-  font-size: 1.7vh;
-  margin-bottom: 7px;
+  font-size: 0.8em;
+  margin-bottom: 0px;
+  margin-top: 0px;
 `

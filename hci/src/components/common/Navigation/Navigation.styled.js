@@ -32,7 +32,6 @@ export const ItemContainer = styled.div`
   width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
   height: 50px;
   border-left: 4px solid transparent;
-  border-color: gray;
   transition: all 150ms ease-in-out;
   color: transparent;
   overflow: hidden;
@@ -95,13 +94,33 @@ export const NavigationContainer = styled.div`
 `
 export const Footer = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
   font-family: ${({ theme }) => theme.font.family};
-  font-size: 1em;
   left: 0;
   bottom: 0;
   width: ${({ theme }) => theme.sizes.navigationExpandedWidth}px;
-  color: gray;
+  color: grey;
   text-align: center;
   margin-bottom: 10px;
   line-height: 5px;
+  font-size: 1.2em;
+  @media only screen and (max-height: 768px) {
+    font-size: 1em;
+  }
+`
+export const VisitContainer = styled.div`
+  font-size: 1.7em;
+`
+export const VisitItem = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  transition: 0.2s all ease-in-out;
+  padding: 1px;
+  :not(:last-of-type) {
+    margin-right: 2px;
+  }
+  :hover {
+    color: grey;
+  }
 `

@@ -95,7 +95,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
     createPage({
       path: `/movies/${movieDetails.data.id}`,
-      component: path.resolve("src/templates/MovieTemplate/index.js"),
+      component: path.resolve("src/templates/MovieTemplate/MovieTemplate.js"),
       context: {
         movie: movieDetails.data,
       },
@@ -104,11 +104,13 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createPage({
     path: `/movies`,
-    component: path.resolve("src/templates/MovieListTemplate/index.js"),
+    component: path.resolve(
+      "src/templates/MovieListTemplate/MovieListTemplate.js"
+    ),
     context: {
       list: aggregatedMovieList,
       title: "Movies",
-      heading: "Top 20 Popular Movies",
+      heading: "Movies",
       cardPath: "movies",
     },
   })
@@ -122,11 +124,13 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createPage({
     path: `/tv_shows`,
-    component: path.resolve("src/templates/MovieListTemplate/index.js"),
+    component: path.resolve(
+      "src/templates/MovieListTemplate/MovieListTemplate.js"
+    ),
     context: {
       list: tvShowsList,
       title: "TV Shows",
-      heading: "Top 20 Popular TV Shows",
+      heading: "TV Shows",
       cardPath: "tv_shows",
     },
   })
@@ -140,22 +144,20 @@ exports.createPages = async ({ actions, graphql }) => {
 
     createPage({
       path: `/tv_shows/${showDetails.data.id}`,
-      component: path.resolve("src/templates/TvShowTemplate/index.js"),
+      component: path.resolve("src/templates/TvShowTemplate/TvShowTemplate.js"),
       context: {
         show: showDetails.data,
       },
     })
   })
 
-  //Editors Blog
+  //About
   createPage({
-    path: `/editors_blog`,
-    component: path.resolve("src/templates/EditorsBlogTemplate/index.js"),
+    path: `/about`,
+    component: path.resolve("src/templates/AboutTemplate/About.js"),
     context: {
-      list: tvShowsList,
-      title: "Editor's Blog",
-      heading: "Editor's Blog",
-      cardPath: "editors_blog",
+      title: "About",
+      heading: "About",
     },
   })
 }
