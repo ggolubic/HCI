@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Popover from "@kiwicom/orbit-components/lib/Popover"
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice"
 import LogoutIcon from "@kiwicom/orbit-components/lib/icons/Logout"
@@ -12,7 +12,7 @@ import { UserCtx } from "../../Services/Navigation/navigation"
 const Container = styled.div`
   position: absolute;
   bottom: 50px;
-  margin: ${({ open }) => (open ? "20px 30px" : "20px 5px")};
+  margin: ${({ open }) => (open ? "20px 30px" : "20px 15px")};
   transition: all 0.5s;
 `
 
@@ -30,6 +30,10 @@ const UserName = styled.div`
   color: rgb(0, 0, 0);
   font-size: 16px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
+  transition: 0.3s all;
+  :hover {
+    color: grey;
+  }
 `
 
 const Avatar = styled.img`
