@@ -33,8 +33,11 @@ const Navigation = ({ location, logo }) => {
   } = useContext(UserCtx)
 
   useEffect(() => {
-    loadUser()
     setClient(true)
+  }, [])
+
+  useEffect(() => {
+    loadUser()
   }, [loggedIn])
 
   const key = isClient ? `client` : `server`
