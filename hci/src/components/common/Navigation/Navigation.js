@@ -22,15 +22,20 @@ import NavigationFooter from "./NavigationFooter"
 import UserMenu from "./UserMenu"
 import MTNLogo from "../MTNLogo/Logo"
 
-import UserProvider from "../../Services/Navigation/navigation"
+import { UserCtx } from "../../Services/Navigation/navigation"
 
 const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
   const [isClient, setClient] = useState(false)
+  const {
+    state: { loggedIn },
+    loadUser,
+  } = useContext(UserCtx)
 
   useEffect(() => {
+    loadUser()
     setClient(true)
-  }, [])
+  }, [loggedIn])
 
   const key = isClient ? `client` : `server`
 
@@ -71,37 +76,35 @@ const Navigation = ({ location, logo }) => {
   }, [navigationOpen])
 
   return (
-    <UserProvider>
-      <NavigationContainer open={navigationOpen} key={key}>
-        <MTNLogo open={navigationOpen} src={logo} />
-        {mainNavigationItems.map((item, id) => (
-          <NavigationItem
-            key={id}
-            item={item}
-            pathname={location.pathname}
-            open={navigationOpen}
-          ></NavigationItem>
-        ))}
-        <NavigationControlContainer>
-          <ButtonLink
-            type="secondary"
-            iconLeft={!navigationOpen && <ChevronRightIcon />}
-            iconRight={navigationOpen && <ChevronLeftIcon />}
-            size="small"
-            title="Toggle navigation"
-            onClick={onControlClick}
-            ariaExpanded={navigationOpen}
-          >
-            {navigationOpen && (
-              <NavigationControlText>Collapse menu</NavigationControlText>
-            )}
-          </ButtonLink>
-        </NavigationControlContainer>
-        <UserMenu navigationOpen={navigationOpen} />
-        {navigationOpen && <NavigationFooter />}
-      </NavigationContainer>
-    </UserProvider>
+    <NavigationContainer open={navigationOpen} key={key}>
+      <MTNLogo open={navigationOpen} src={logo} />
+      {mainNavigationItems.map((item, id) => (
+        <NavigationItem
+          key={id}
+          item={item}
+          pathname={location.pathname}
+          open={navigationOpen}
+        ></NavigationItem>
+      ))}
+      <NavigationControlContainer>
+        <ButtonLink
+          type="secondary"
+          iconLeft={!navigationOpen && <ChevronRightIcon />}
+          iconRight={navigationOpen && <ChevronLeftIcon />}
+          size="small"
+          title="Toggle navigation"
+          onClick={onControlClick}
+          ariaExpanded={navigationOpen}
+        >
+          {navigationOpen && (
+            <NavigationControlText>Collapse menu</NavigationControlText>
+          )}
+        </ButtonLink>
+      </NavigationControlContainer>
+      <UserMenu navigationOpen={navigationOpen} />
+      {navigationOpen && <NavigationFooter />}
+    </NavigationContainer>
   )
 }
 
-export default React.memo(Navigation)
+export default Navigation
