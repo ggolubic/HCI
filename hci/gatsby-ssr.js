@@ -5,3 +5,11 @@
  */
 
 // You can delete this file if you're not using it
+
+const React = require("react")
+const UserProvider = require("./src/components/Services/Navigation/navigation")
+  .default
+
+exports.wrapRootElement = ({ element }) => {
+  return <UserProvider>{element}</UserProvider>
+}

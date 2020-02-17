@@ -3,10 +3,11 @@ import React, { useReducer, createContext } from "react"
 export const UserCtx = createContext({
   state: {},
   logIn: (user, pass) => [user, pass],
+  logOut: () => [],
+  loadUser: () => [],
 })
 
 const userReducer = (state, action) => {
-  console.log(action)
   switch (action.type) {
     case "LOG_IN":
       return {
@@ -46,6 +47,19 @@ const userReducer = (state, action) => {
         loading: false,
         error: action.error,
       }
+    case "LOAD_USER":
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      }
+    case "LOAD_USER_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        loggedIn: action.user ? true : false,
+        user: action.user,
+      }
     default:
       return {
         ...state,
@@ -55,7 +69,7 @@ const userReducer = (state, action) => {
 
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, {
-    user: "",
+    user: null,
     loading: false,
     loggedIn: false,
     error: null,
@@ -74,9 +88,16 @@ const UserProvider = ({ children }) => {
       dispatch({ type: "LOG_OUT_SUCCESS" })
     }, [1000])
   }
+
+  const loadUser = () => {
+    dispatch({ type: "LOAD_USER" })
+    const { user } = state
+    dispatch({ type: "LOAD_USER_SUCCESS", user })
+  }
   const value = {
     state,
     logIn,
+    loadUser,
     logOut,
   }
   return <UserCtx.Provider value={value}>{children}</UserCtx.Provider>
