@@ -11,8 +11,8 @@ import genericAvatarImage from "../../../images/genericAvatar.png"
 import { UserCtx } from "../../Services/Navigation/navigation"
 const Container = styled.div`
   position: absolute;
-  bottom: 50px;
-  margin: ${({ open }) => (open ? "20px 30px" : "20px 15px")};
+  bottom: 60px;
+  margin: ${({ open }) => (open ? "10px 30px" : "0px 15px")};
   transition: all 0.5s;
 `
 
