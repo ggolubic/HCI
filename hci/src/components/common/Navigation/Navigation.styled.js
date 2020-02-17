@@ -103,10 +103,8 @@ export const Footer = styled.div`
   color: grey;
   text-align: center;
   margin-bottom: 10px;
-  line-height: 5px;
-  @media only screen and (max-height: 768px) {
-    font-size: 0.9em;
-  }
+  line-height: 0px;
+  padding-top: 13px;
 `
 export const VisitContainer = styled.div`
   font-size: 1.7em;
@@ -115,6 +113,7 @@ export const VisitItem = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.2s all ease-in-out;
+  font-size: 1.2em;
   padding: 1px;
   :not(:last-of-type) {
     margin-right: 2px;
