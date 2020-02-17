@@ -70,7 +70,7 @@ const Movie = ({
             <RatingStars
               rating={vote_average / 2}
               size="small"
-              color="secondary"
+              color="primary"
               showEmpty
             />
             <h4>Genre</h4>

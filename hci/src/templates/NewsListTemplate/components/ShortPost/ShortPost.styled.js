@@ -18,32 +18,34 @@ export const PostLink = styled(Link)`
   color: black;
   text-decoration: none;
 `
-
 export const PostTitle = styled.h2`
   margin-bottom: 0px;
   font-size: 1.3em;
 `
-
-export const PostTimeStamp = styled.h3`
-  display: inline-block;
-  color: hsl(0, 0%, 45%);
-  font-weight: 600;
-  font-size: 0.8em;
-  margin: 0 0 15px 15px;
-`
-export const PostAuthor = styled.h3`
-  font-weight: 600;
-  margin-bottom: 0;
-  font-size: 0.8em;
-  color: ${({ theme }) => theme.orbit.paletteProductNormal};
-`
 export const PostDescription = styled.div`
   display: flex;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #dadce0;
+  margin-top: 0px;
+`
+export const PostAuthor = styled.p`
+  font-size: 0.8em;
+  font-weight: 1000;
+  color: hsl(0, 0%, 60%);
+  margin-bottom: 0px;
+`
+export const DescriptionSplitter = styled.p`
+  color: hsl(0, 0%, 60%);
+  font-size: 0.8em;
+  font-weight: 1000;
+  margin: 0px 4px 5px 4px;
+`
+export const PostTimeStamp = styled.p`
+  color: hsl(0, 0%, 60%);
+  font-weight: 1000;
+  font-size: 0.8em;
+  margin-bottom: 0px;
 `
 export const PostExcerpt = styled.p`
   font-size: 0.8em;
-  margin-bottom: 7px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 `

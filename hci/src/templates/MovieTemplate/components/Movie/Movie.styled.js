@@ -5,7 +5,7 @@ export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 10px;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
   transition: 0.5s all;
@@ -20,6 +20,9 @@ export const Image = styled.img`
     css`
       height: 20em;
     `}
+  @media screen and (max-width: 799px) {
+    margin-bottom: 10px;
+  }
 `
 export const Container = styled.div`
   background: #fff;
@@ -28,20 +31,23 @@ export const Container = styled.div`
   border: ${({ theme }) =>
     `${theme.orbit.borderWidthCard} ${theme.orbit.borderStyleCard} ${theme.orbit.borderColorCard}`};
   h4 {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 0;
   }
 `
-export const Title = styled.h1`
+export const Title = styled.h2`
   margin-bottom: 0px;
 `
 export const ReleaseDate = styled.p`
-  color: hsl(0, 0%, 45%);
+  color: hsl(0, 0%, 60%);
   font-weight: 600;
   margin-bottom: 0px;
 `
 export const MovieDescription = styled.div`
   margin-left: 20px;
+  @media screen and (max-width: 799px) {
+    margin-left: 0px;
+  }
 `
 export const Overview = styled.div`
   margin-top: 15px;
@@ -58,7 +64,7 @@ export const FindOutMore = styled.a`
   display: inline-block;
   text-decoration: none;
   color: ${({ theme }) => theme.orbit.paletteProductNormal};
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 15px;
   font-weight: 600;
   transition: 0.2s all;
@@ -78,13 +84,15 @@ export const Border = styled.div`
 `
 export const FeaturedCrewContainer = styled.div`
   margin-left: 20px;
+  @media screen and (max-width: 799px) {
+    margin-left: 0px;
+  }
 `
 export const FeaturedCrewGrid = styled.div`
   display: grid;
-  margin-top: 0px;
+  margin-top: 3px;
 `
 export const CrewMember = styled.div`
-  margin-right: 0px;
   a {
     color: ${({ theme }) => theme.orbit.paletteProductNormal};
     text-decoration: none;

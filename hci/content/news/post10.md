@@ -1,6 +1,6 @@
 ---
 title: Birds of Prey’s Title Was Changed By WB To Help Ticket Sales
-date: 2020-02-15
+date: 2020-02-21
 slug: birds-prey-harley-quinn-title-change-ticket-sales
 published: true
 author: Chris Agar
