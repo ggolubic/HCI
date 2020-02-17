@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react"
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useContext,
+} from "react"
 
 import ChevronLeftIcon from "@kiwicom/orbit-components/lib/icons/ChevronLeft"
 import ChevronRightIcon from "@kiwicom/orbit-components/lib/icons/ChevronRight"
@@ -13,7 +19,10 @@ import {
 
 import NavigationItem from "./NavigationItem"
 import NavigationFooter from "./NavigationFooter"
+import UserMenu from "./UserMenu"
 import MTNLogo from "../MTNLogo/Logo"
+
+import UserProvider from "../../Services/Navigation/navigation"
 
 const Navigation = ({ location, logo }) => {
   const resizeWidth = 1280
@@ -62,33 +71,36 @@ const Navigation = ({ location, logo }) => {
   }, [navigationOpen])
 
   return (
-    <NavigationContainer open={navigationOpen} key={key}>
-      <MTNLogo open={navigationOpen} src={logo} />
-      {mainNavigationItems.map((item, id) => (
-        <NavigationItem
-          key={id}
-          item={item}
-          pathname={location.pathname}
-          open={navigationOpen}
-        ></NavigationItem>
-      ))}
-      <NavigationControlContainer>
-        <ButtonLink
-          type="secondary"
-          iconLeft={!navigationOpen && <ChevronRightIcon />}
-          iconRight={navigationOpen && <ChevronLeftIcon />}
-          size="small"
-          title="Toggle navigation"
-          onClick={onControlClick}
-          ariaExpanded={navigationOpen}
-        >
-          {navigationOpen && (
-            <NavigationControlText>Collapse menu</NavigationControlText>
-          )}
-        </ButtonLink>
-      </NavigationControlContainer>
-      {navigationOpen && <NavigationFooter />}
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer open={navigationOpen} key={key}>
+        <MTNLogo open={navigationOpen} src={logo} />
+        {mainNavigationItems.map((item, id) => (
+          <NavigationItem
+            key={id}
+            item={item}
+            pathname={location.pathname}
+            open={navigationOpen}
+          ></NavigationItem>
+        ))}
+        <NavigationControlContainer>
+          <ButtonLink
+            type="secondary"
+            iconLeft={!navigationOpen && <ChevronRightIcon />}
+            iconRight={navigationOpen && <ChevronLeftIcon />}
+            size="small"
+            title="Toggle navigation"
+            onClick={onControlClick}
+            ariaExpanded={navigationOpen}
+          >
+            {navigationOpen && (
+              <NavigationControlText>Collapse menu</NavigationControlText>
+            )}
+          </ButtonLink>
+        </NavigationControlContainer>
+        <UserMenu navigationOpen={navigationOpen} />
+        {navigationOpen && <NavigationFooter />}
+      </NavigationContainer>
+    </UserProvider>
   )
 }
 
